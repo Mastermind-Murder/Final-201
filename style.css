@@ -25,37 +25,41 @@ header li {
 
 .card-container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
+    width: 100vw;
   }
-  .card {
-    position: relative;
-    width: 150px;
-    height: 200px;
-    perspective: 800px;
-    margin: 15px;
+.card {
+  position: relative;
+  width: 250px;
+  height: 375px;
+  perspective: 800px;
+  margin: 15px;
+
   }
-  .card-front, .card-back {
+.card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
   }
-  .card-front {
+.card-front {
     background-color: #ccc;
   }
-  .card-back {
+.card-back {
     background-color: #222;
     transform: rotateY(180deg);
   }
-  .card.flip .card-front {
+.card.flip .card-front {
     transform: rotateY(180deg);
   }
-  .card.flip .card-back {
+.card.flip .card-back {
     transform: rotateY(0deg);
   }
+
 
 .card-container {
   display: flex;
@@ -119,3 +123,10 @@ footer {
   margin: 0 auto;
 }
 
+.victimSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    border: thin solid green ;
+  }

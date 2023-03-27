@@ -60,7 +60,8 @@
 }
 
 .card-back {
-  background-color: #222;
+  color: red;
+  background-color: whitesmoke;
   transform: rotateY(180deg);
 }
 

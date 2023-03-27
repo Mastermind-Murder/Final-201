@@ -10,7 +10,7 @@ function Character(name, age, fileLocation, defaultWeapon) {
   this.id = this.name + this.age;
 
   this.isKiller = false;
-  this.timesUsed = 0;// need to use this somewhere 
+  this.timesUsed = 0;// need to use this somewhere
 
   this.backStory = '';
   this.badAlibi = '';
@@ -41,11 +41,11 @@ Character.prototype.getBadAlibi = function () {
 };
 
 Character.prototype.getGoodAlibi = function () {
-  return this.goodAlibi
+  return this.goodAlibi;
 };
 
 
-//setters for each charachter object 
+//setters for each charachter object
 Character.prototype.setBackStory = function (someText) {
   this.backStory = someText;
 };
@@ -64,12 +64,12 @@ Character.prototype.setRoomLocation = function (newRoom) {
 };
 
 
-//generating random players 
-let charachter1 = new Character("Juan", 33, "some text Location", "hammer");
-let charachter2 = new Character("Kimmy", 20, "Other file location", "phone");
-let charachter3 = new Character("Kamau", 27, "file Location", "uber");
+//generating random players
+let charachter1 = new Character('Kyle', 33, 'some text Location', 'hammer');
+let charachter2 = new Character('Kimmy', 20, 'Other file location', 'phone');
+let charachter3 = new Character('Kamau', 27, 'file Location', 'uber');
 
-charachter1.setBackStory("this is a general back story");
+charachter1.setBackStory('this person likes dolls');
 charachter2.setBackStory('Another back story');
 charachter3.setBackStory('the last random back sotry');
 
@@ -113,8 +113,14 @@ ourTotalPlayers.addCharacter(charachter1);
 function GamePlayCharacters(arrayOfCharacters) {
   this.charachtersInPlay = arrayOfCharacters;
   this.winGame; //to be used with boolean true false TODO: make method to win the game
+  //Todo: implement counter for number of guesses total and number of guesses limit?
+  this.guessedKiller = 0;
+  this.guessLimit = 10; //setting to 10 for now
 
 }
+
+
+
 
 GamePlayCharacters.prototype.removeCharacter = function (Character) {
   for (let i = 0; i < this.charachtersInPlay.collectionOfCharacters.length; i++) {
@@ -125,10 +131,10 @@ GamePlayCharacters.prototype.removeCharacter = function (Character) {
 };
 
 GamePlayCharacters.prototype.generateKiller = function () {
-  let randomKiller = Math.floor(Math.random() * this.charachtersInPlay.collectionOfCharacters.length)
+  let randomKiller = Math.floor(Math.random() * this.charachtersInPlay.collectionOfCharacters.length);
   this.charachtersInPlay.collectionOfCharacters[randomKiller].setIsKiller(true);
   //reference collectionsOfCharacters because that is the name of the attribute given in the Characters collection object
-  //characters in play comes from GamePlay characters object 
+  //characters in play comes from GamePlay characters object
 };
 
 GamePlayCharacters.prototype.resetGame = function () {
@@ -137,10 +143,11 @@ GamePlayCharacters.prototype.resetGame = function () {
   }
 };
 
+//assign rooms for characters in Collection Of Characters array
 GamePlayCharacters.prototype.assignRooms = function () {
-  let rooms = [1, 2, 3, 4];
+  let rooms = [1, 2,1,2];
 
-  //shuffle array for rooms 
+  //shuffle array for rooms
   for (let i = rooms.length - 1; i > 0; i--) {
     //generate random number
     let j = Math.floor(Math.random() * (i + 1));
@@ -157,11 +164,45 @@ GamePlayCharacters.prototype.assignRooms = function () {
   }
 };
 
+//this will check if selected item is a killer
+GamePlayCharacters.prototype.checkIfSelectedIsKiller = function(guessedCharacter){
+
+  do{
+    for(let i = 0; i< this.charachtersInPlay.collectionOfCharacters.length; i++){
+      if(guessedCharacter.checkIsKiller()){
+        this.winGame = true;
+        console.log("guessed the killer");
+      } else{
+        this.guessedKiller++;
+        console.log(`${this.guessedKiller} is current guessed killer count `);
+      }
+    }
+
+  }while (this.guessedKiller < this.guessLimit);//check here
+
+};
+
+
+//global functions for game
 function startTheGame(GamePlayCharacters) {
   GamePlayCharacters.resetGame();
   GamePlayCharacters.assignRooms();
   GamePlayCharacters.generateKiller();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //For --Testing Below --

@@ -1,0 +1,33 @@
+.card {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    perspective: 800px;
+  }
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .card-front {
+    background-color: #ccc;
+  }
+  .card-back {
+    background-color: #222;
+    color: #ccc;
+    transform: rotateY(180deg);
+    width: 250px;
+    height: 375px;
+  }
+  .card.flip .card-front {
+    transform: rotateY(180deg);
+  }
+  .card.flip .card-back {
+    transform: rotateY(0deg);
+  }
+
+  /* .card-front img {
+    height: 200px;
+    width: 100px;
+  } */

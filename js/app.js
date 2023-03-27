@@ -63,23 +63,38 @@ Character.prototype.setRoomLocation = function (newRoom) {
   this.roomLocation = newRoom;
 };
 
+//TODO: have getter method for picture file.
+
 
 //generating random players
-let charachter1 = new Character('Kyle', 33, 'some text Location', 'hammer');
-let charachter2 = new Character('Kimmy', 20, 'Other file location', 'phone');
-let charachter3 = new Character('Kamau', 27, 'file Location', 'uber');
+// let charachter1 = new Character('Kyle', 33, 'some text Location', 'hammer');
+// let charachter2 = new Character('Kimmy', 20, 'Other file location', 'phone');
+// let charachter3 = new Character('Kamau', 27, 'file Location', 'uber');
 
-charachter1.setBackStory('this person likes dolls');
-charachter2.setBackStory('Another back story');
-charachter3.setBackStory('the last random back sotry');
 
-charachter1.setBadAlibi('this is a bad alibi');
-charachter2.setBadAlibi('this is another bad aliby');
-charachter3.setBadAlibi('this is the third bad alibi');
 
-charachter1.setGoodAliby('this is a good alibi');
-charachter1.setGoodAliby('this is another 2 good alibi');
-charachter1.setGoodAliby('this is the thrid good alibi');
+
+let gameCharacter1 = new Character('Robert Thomas',29,'assets for clue game/Robert Thomas (younger brother, 1).jpg', 'Plasma rifle');
+let gameCharacter2 = new Character('Samantha Thomas',26, 'assets for clue game/Samantha Thomas (wife, 2).jpg', 'Gravity hammer');
+let gameCharacter3 = new Character('Richard Johnson',21, 'assets for clue game/Richard Johnson (business partner, 3).jpg', 'Vibroblade');
+let gameCharacter4 = new Character('Cynthia Green', 22, 'assets for clue game/Cynthia Green (personal assistant, 4).jpg', 'Sonic disruptor');
+let gameCharacter5 = new Character('Eric Davis', 25, 'assets for clue game/Eric Davis (bodyguard, 5).jpg', 'Railgun');
+let gameCharacter6 = new Character('Caroline Rogers',28, 'assets for clue game/Caroline Rogers, (Victim\'s ex-girlfriend, 6).jpg','Acid launcher');
+let gameCharacter7 = new Character('William Jones',43, 'assets for clue game/William Jones (accountant, 7).jpg', 'Flamethrower');
+let gameCharacter8 = new Character('Rebecca Taylor',45, 'assets for clue game/Rebecca Taylor (secretary, 8).jpg', 'Neural disruptor');
+let gameCharacter9 = new Character('Anthony Brown',13, 'assets for clue game/Anthony Brown (Competitor, 9).jpg', 'Singularity cannon');
+let gameCharacter10 = new Character('Lisa Williams',23, 'assets for clue game/Lisa Williams (neighbor, 10).jpg', 'Poison dart gun');
+let gameCharacter11 = new Character('Timothy Baker',41, 'assets for clue game/Timothy Baker (chauffeur, 11).jpg', 'Energy sword');
+let gameCharacter12 = new Character('Maria Rodriguez',37, 'assets for clue game/Maria Rodriguez (housekeeper, 12).jpg', 'Arc caster');
+let gameCharacter13 = new Character('Lawrence Campbell', 41, 'assets for clue game/Lawrence Campbell (former employee, 13).jpg', 'Freeze ray');
+let gameCharacter14 = new Character('Jessica Parker',42, 'assets for clue game/Jessica Parker (former lover, 14).jpg', 'Smart grenade launcher');
+let gameCharacter15 = new Character('Patrick Nelson', 69, 'assets for clue game/Patrick Nelson (lawyer, 15).jpg', 'EMP rifle');
+let gameCharacter16 = new Character('Michael Wright', 38, 'assets for clue game/Michael Wright (stockbroker, 16).jpg', 'Quantum destabilizer');
+let gameCharacter17 = new Character('Rachel Scott',26, 'assets for clue game/Rachel Scott (journalist-friend, 17).jpg', 'Tesla coil whip');
+let gameCharacter18 = new Character('Samuel Young',12, 'assets for clue game/Samuel Young (rival, 18).jpg', 'Nano swarm grenades');
+let gameCharacter19 = new Character('Emily Collins',15, 'assets for clue game/Emily Collins (doctor, 19).jpg', 'Dark matter cannon');
+let gameCharacter20 = new Character('Jacob Martinez', 27,'assets for clue game/Jacob Martinez (security guard, 20).jpg ', 'Graviton pulse rifle');
+
 
 
 //charachter collection constructor this will hold all characters for the game
@@ -101,12 +116,28 @@ CharacterCollection.prototype.addCharacter = function (Character) {
 
 //creating location for all players to be stored --Testing here --
 let ourTotalPlayers = new CharacterCollection();
-ourTotalPlayers.addCharacter(charachter1);
-ourTotalPlayers.addCharacter(charachter2);
-ourTotalPlayers.addCharacter(charachter3);
-ourTotalPlayers.addCharacter(charachter1);
+ourTotalPlayers.addCharacter(gameCharacter1);
+ourTotalPlayers.addCharacter(gameCharacter2);
+ourTotalPlayers.addCharacter(gameCharacter3);
+ourTotalPlayers.addCharacter(gameCharacter4);
+ourTotalPlayers.addCharacter(gameCharacter5);
+ourTotalPlayers.addCharacter(gameCharacter6);
+ourTotalPlayers.addCharacter(gameCharacter7);
+ourTotalPlayers.addCharacter(gameCharacter8);
+ourTotalPlayers.addCharacter(gameCharacter9);
+ourTotalPlayers.addCharacter(gameCharacter10);
+ourTotalPlayers.addCharacter(gameCharacter11);
+ourTotalPlayers.addCharacter(gameCharacter12);
+ourTotalPlayers.addCharacter(gameCharacter13);
+ourTotalPlayers.addCharacter(gameCharacter14);
+ourTotalPlayers.addCharacter(gameCharacter15);
+ourTotalPlayers.addCharacter(gameCharacter16);
+ourTotalPlayers.addCharacter(gameCharacter17);
+ourTotalPlayers.addCharacter(gameCharacter18);
+ourTotalPlayers.addCharacter(gameCharacter19);
+ourTotalPlayers.addCharacter(gameCharacter20);
 
-// console.log(ourTotalPlayers);
+console.log(ourTotalPlayers);
 
 
 //Constructor for the GamePlay Characters during game session
@@ -171,7 +202,8 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function(guessedCharacter
     for(let i = 0; i< this.charachtersInPlay.collectionOfCharacters.length; i++){
       if(guessedCharacter.checkIsKiller()){
         this.winGame = true;
-        console.log("guessed the killer");
+        console.log('guessed the killer');
+        alert('The killer was captured/killed');
       } else{
         this.guessedKiller++;
         console.log(`${this.guessedKiller} is current guessed killer count `);

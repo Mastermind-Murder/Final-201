@@ -23,111 +23,25 @@ header li {
   margin-left: 50px
 }
 
-.card-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 100vw;
+  body section {
+    padding: 20px;
+    margin: auto;
+    font-size: x-large;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
   }
-.card {
-  position: relative;
-  width: 250px;
-  height: 375px;
-  perspective: 800px;
-  margin: 15px;
-
-  }
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
-.card-front {
-    background-color: #ccc;
-  }
-.card-back {
-    background-color: #222;
-    transform: rotateY(180deg);
-  }
-.card.flip .card-front {
-    transform: rotateY(180deg);
-  }
-.card.flip .card-back {
-    transform: rotateY(0deg);
+  
+  footer {
+    background-color: rgba(111, 196, 159, 0.643);
+    border: 5px solid #090000;
+    padding: 4px;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-radius: 45%;
+    border: 2px solid rgb(22, 2, 2);
+    border-color: rgb(18, 1, 1);
+    max width: 50%;
+    margin: 0 auto;
   }
 
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.card {
-  position: relative;
-  width: 150px;
-  height: 200px;
-  perspective: 800px;
-  margin: 15px;
-}
-
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.card-front {
-  background-color: #ccc;
-}
-
-.card-back {
-  color: red;
-  background-color: whitesmoke;
-  transform: rotateY(180deg);
-}
-
-.card.flip .card-front {
-  transform: rotateY(180deg);
-}
-
-.card.flip .card-back {
-  transform: rotateY(0deg);
-}
-
-body section {
-  padding: 20px;
-  margin: auto;
-  font-size: x-large;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-}
-
-footer {
-  background-color: rgba(111, 196, 159, 0.643);
-  border: 5px solid #090000;
-  padding: 4px;
-  font-size: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  border-radius: 45%;
-  border: 2px solid rgb(22, 2, 2);
-  border-color: rgb(18, 1, 1);
-  max width: 50%;
-  margin: 0 auto;
-}
-
-.victimSection {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    border: thin solid green ;
-  }

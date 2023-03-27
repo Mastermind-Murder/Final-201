@@ -10,16 +10,13 @@
     height: 100%;
     backface-visibility: hidden;
   }
-  .card-front {
-    background-color: #ccc;
-  }
+  
   .card-back {
-    background-color: #222;
-    color: #ccc;
     transform: rotateY(180deg);
     width: 250px;
     height: 375px;
   }
+
   .card.flip .card-front {
     transform: rotateY(180deg);
   }

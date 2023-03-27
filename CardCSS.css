@@ -26,8 +26,3 @@
   .card.flip .card-back {
     transform: rotateY(0deg);
   }
-
-  /* .card-front img {
-    height: 200px;
-    width: 100px;
-  } */

@@ -95,7 +95,30 @@ let gameCharacter18 = new Character('Samuel Young',12, 'assets for clue game/Sam
 let gameCharacter19 = new Character('Emily Collins',15, 'assets for clue game/Emily Collins (doctor, 19).jpg', 'Dark matter cannon');
 let gameCharacter20 = new Character('Jacob Martinez', 27,'assets for clue game/Jacob Martinez (security guard, 20).jpg ', 'Graviton pulse rifle');
 
+gameCharacter1.setBadAlibi('Robert claimed to have been at home at the time of the murder, but there was no one who could verify his alibi.');
+gameCharacter1.setGoodAliby('Robert claimed to have been at a business meeting at the time of the murder, and several colleagues confirmed his alibi.');
+gameCharacter2.setGoodAliby('Samantha claimed to have been out of town on a business trip at the time of the murder, and her flight records and hotel receipts corroborated her story.');
+gameCharacter3.setGoodAliby('Richard claimed to have been at a business meeting at the time of the murder, and several colleagues confirmed his alibi.');
+gameCharacter4.setGoodAliby('Cynthia claimed to have been at home with her family at the time of the murder, and her family members confirmed her alibi.');
+gameCharacter5.setGoodAliby('Eric claimed to have been on duty guarding Alexander’s house at the time of the murder, and several neighbors confirmed seeing him there.');
 
+gameCharacter6.setGoodAliby('Caroline claimed to have been out with friends at the time of the murder, and several of her friends confirmed her alibi.');
+gameCharacter7.setGoodAliby('William claimed to have been working late at his office at the time of the murder, and his colleagues confirmed his alibi.');
+gameCharacter8.setGoodAliby('Rebecca claimed to have been at a yoga class at the time of the murder, and the instructor and several classmates confirmed her alibi.');
+gameCharacter9.setGoodAliby('Anthony claimed to have been out of town on a business trip at the time of the murder, and his flight records and hotel receipts corroborated his story.');
+gameCharacter10.setGoodAliby('Lisa claimed to have been at home with her husband at the time of the murder, and her husband confirmed her alibi.');
+
+gameCharacter11.setGoodAliby('Timothy claimed to have been driving Alexander to a business meeting at the time of the murder, and several witnesses confirmed seeing them together.');
+gameCharacter12.setGoodAliby('Maria claimed to have been cleaning another house at the time of the murder, and her employer confirmed her alibi.');
+gameCharacter13.setGoodAliby('Lawrence claimed to have been out of town on vacation at the time of the murder, and his travel records and hotel receipts corroborated his story.');
+gameCharacter14.setGoodAliby('Jessica claimed to have been at home with her husband at the time of the murder, and her husband confirmed her alibi.');
+gameCharacter15.setGoodAliby('Patrick claimed to have been in his office at the time of the murder, and several colleagues confirmed his alibi.');
+
+gameCharacter16.setGoodAliby('Michael claimed to have been at home with his family at the time of the murder, and his family members confirmed his alibi.');
+gameCharacter17.setGoodAliby('Rachel claimed to have been at a press conference at the time of the murder, and several colleagues confirmed her alibi.');
+gameCharacter18.setGoodAliby('Samuel claimed to have been at home with his family at the time of the murder, and his family members confirmed his alibi.');
+gameCharacter19.setGoodAliby('Emily claimed to have been at the hospital at the time of the murder, and hospital records confirmed her story.');
+gameCharacter20.setGoodAliby(' Jacob claimed to have been on duty guarding Alexander’s office at the time of the murder, and several colleagues confirmed his alibi.');
 
 //charachter collection constructor this will hold all characters for the game
 function CharacterCollection() {
@@ -110,6 +133,12 @@ CharacterCollection.prototype.addCharacter = function (Character) {
 
   } else {
     this.collectionOfCharacters.push(Character);
+  }
+};
+
+CharacterCollection.prototype.addBadAlibi = function(){
+  for(let i =0; i<this.collectionOfCharacters.length;i++){
+    this.collectionOfCharacters[i].setBadAlibi('Claimed to have been at home at the time of the murder, but there was no one who could verify his alibi.');
   }
 };
 
@@ -137,6 +166,7 @@ ourTotalPlayers.addCharacter(gameCharacter18);
 ourTotalPlayers.addCharacter(gameCharacter19);
 ourTotalPlayers.addCharacter(gameCharacter20);
 
+ourTotalPlayers.addBadAlibi();
 console.log(ourTotalPlayers);
 
 

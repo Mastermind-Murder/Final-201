@@ -76,8 +76,8 @@ body section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 1600px;
-    width: 1200px;
+    height: 1700px;
+    width: 1100px;
 }
 
 .team-header {
@@ -90,10 +90,19 @@ body section {
     font-size: 40px;
 }
 
+.headshots {
+    display: flex;
+    flex-direction: row;
+}
+
 #Ben-head {
-    padding: 0px 25px
+    padding: 0px 100px
 }
 
 #Juan-head {
-    padding: 0px 0px 0px 45px;
+    padding: 0px 0px 0px 105px;
+}
+
+#Hayden-head {
+    padding: 0px 100px
 }

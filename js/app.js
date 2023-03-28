@@ -309,158 +309,173 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function (guessedCharacte
 
 };
 
+GamePlayCharacters.prototype.save = function () {
+  let stringifyValues = JSON.stringify(this.playableCharacters);
+  localStorage.setItem('character',stringifyValues);
+};
+
+GamePlayCharacters.prototype.load = function () {
+  let valuesFromStorage = JSON.parse(localStorage.getItem('characters'));
+  if (valuesFromStorage) {
+    valuesFromStorage.forEach(character => {
+      this.playableCharacters.push(new Character(character.name, character.age, character.fileLocation));
+    });
+  }
+};
+
+
 GamePlayCharacters.prototype.assignInfo = function () {
- 
-  let backStory=`${this.playableCharacters[0].name} :The victim's business partner who was in severe debt and stood to gain financially from the victim's death`;
-  this.playableCharacters[0].backStory=backStory;
 
-  let clue1A =`${this.playableCharacters[0].name} : Was attending a business conference in another city at the time of the murder. Their attendance was confirmed by several colleagues and has a receipt for the hotel stay.`;
-  this.playableCharacters[0].clue1=clue1A;
+  let backStory = `${this.playableCharacters[0].name} :The victim's business partner who was in severe debt and stood to gain financially from the victim's death`;
+  this.playableCharacters[0].backStory = backStory;
 
-  let clue2A=`${this.playableCharacters[0].name} : Was at home with their partner at the time of the murder. Their partner can confirm their whereabouts.`;
-  this.playableCharacters[0].clue2=clue2A;
+  let clue1A = `${this.playableCharacters[0].name} : Was attending a business conference in another city at the time of the murder. Their attendance was confirmed by several colleagues and has a receipt for the hotel stay.`;
+  this.playableCharacters[0].clue1 = clue1A;
 
-  let clue3A=`${this.playableCharacters[0].name} : Was seen in the vicinity of the crime scene by a witness. Claims they were just taking a walk, but there are no security cameras or other witnesses to corroborate the story.`;
-  this.playableCharacters[0].clue3=clue3A;
+  let clue2A = `${this.playableCharacters[0].name} : Was at home with their partner at the time of the murder. Their partner can confirm their whereabouts.`;
+  this.playableCharacters[0].clue2 = clue2A;
 
-  let clue4A=`${this.playableCharacters[0].name} : Was at a bar near the crime scene, but no one there remembers seeing them.`;
-  this.playableCharacters[0].clue4=clue4A;
-  
-  let backStory2=`${this.playableCharacters[1].name} The victim's ex-friend who had a history of stalking him and was angry over their recent fallout.`;
-  this.playableCharacters[1].backStory=backStory2;
+  let clue3A = `${this.playableCharacters[0].name} : Was seen in the vicinity of the crime scene by a witness. Claims they were just taking a walk, but there are no security cameras or other witnesses to corroborate the story.`;
+  this.playableCharacters[0].clue3 = clue3A;
 
-  let clue1B =`${this.playableCharacters[1].name} : was out of town visiting family at the time of the murder. Several family members can confirm their whereabouts and they also have a plane tickets and hotel receipts as proof.`;
-  this.playableCharacters[1].clue1=clue1B;
+  let clue4A = `${this.playableCharacters[0].name} : Was at a bar near the crime scene, but no one there remembers seeing them.`;
+  this.playableCharacters[0].clue4 = clue4A;
 
-  let clue2B=`${this.playableCharacters[1].name} : was volunteering at a local soup kitchen at the time of the murder. The staff and clients can confirm their presence.
+  let backStory2 = `${this.playableCharacters[1].name} The victim's ex-friend who had a history of stalking him and was angry over their recent fallout.`;
+  this.playableCharacters[1].backStory = backStory2;
+
+  let clue1B = `${this.playableCharacters[1].name} : was out of town visiting family at the time of the murder. Several family members can confirm their whereabouts and they also have a plane tickets and hotel receipts as proof.`;
+  this.playableCharacters[1].clue1 = clue1B;
+
+  let clue2B = `${this.playableCharacters[1].name} : was volunteering at a local soup kitchen at the time of the murder. The staff and clients can confirm their presence.
   `;
-  this.playableCharacters[1].clue2=clue2B;
+  this.playableCharacters[1].clue2 = clue2B;
 
-  let clue3B=`${this.playableCharacters[1].name} : was seen arguing with the victim near the crime scene shortly before the murder. Claims it was a chance encounter and they just had a heated discussion, but the witness believes it was more serious.`;
-  this.playableCharacters[1].clue3=clue3B;
+  let clue3B = `${this.playableCharacters[1].name} : was seen arguing with the victim near the crime scene shortly before the murder. Claims it was a chance encounter and they just had a heated discussion, but the witness believes it was more serious.`;
+  this.playableCharacters[1].clue3 = clue3B;
 
-  let clue4B=`${this.playableCharacters[1].name} : Claims to have been at home alone at the time of the murder, but there is no one to corroborate their story..`;
-  this.playableCharacters[1].clue4=clue4B;
- 
-  let backStory3=`${this.playableCharacters[2].name} A former employee who was fired by the victim and had a long-standing grudge against him.`;
-  this.playableCharacters[2].backStory=backStory3;
+  let clue4B = `${this.playableCharacters[1].name} : Claims to have been at home alone at the time of the murder, but there is no one to corroborate their story..`;
+  this.playableCharacters[1].clue4 = clue4B;
 
-  let clue1C =`${this.playableCharacters[2].name} : was out of the country on a vacation with their family at the time of the murder. They have plane tickets and hotel receipts as proof.`;
-  this.playableCharacters[2].clue1=clue1C;
+  let backStory3 = `${this.playableCharacters[2].name} A former employee who was fired by the victim and had a long-standing grudge against him.`;
+  this.playableCharacters[2].backStory = backStory3;
 
-  let clue2C=`${this.playableCharacters[2].name} : was attending a family wedding out of town at the time of the murder. Several family members can confirm their whereabouts.`;
-  this.playableCharacters[2].clue2=clue2C;
+  let clue1C = `${this.playableCharacters[2].name} : was out of the country on a vacation with their family at the time of the murder. They have plane tickets and hotel receipts as proof.`;
+  this.playableCharacters[2].clue1 = clue1C;
 
-  let clue3C=`${this.playableCharacters[2].name} : was seen in the victim's neighborhood around the time of the murder. Claims he was just passing through on their way to a meeting, but there are no other witnesses or evidence to support the story.`;
-  this.playableCharacters[2].clue3=clue3C;
+  let clue2C = `${this.playableCharacters[2].name} : was attending a family wedding out of town at the time of the murder. Several family members can confirm their whereabouts.`;
+  this.playableCharacters[2].clue2 = clue2C;
 
-  let clue4C=`${this.playableCharacters[2].name} : claims to have been working late at the office at the time of the murder, but there is no one to confirm the story.`;
-  this.playableCharacters[2].clue4=clue4C;
-  
-  let backStory4=`${this.playableCharacters[3].name} A jealous colleague who was passed over for a promotion that the victim received.`;
-  this.playableCharacters[3].backStory=backStory4;
+  let clue3C = `${this.playableCharacters[2].name} : was seen in the victim's neighborhood around the time of the murder. Claims he was just passing through on their way to a meeting, but there are no other witnesses or evidence to support the story.`;
+  this.playableCharacters[2].clue3 = clue3C;
 
-  let clue1D =`${this.playableCharacters[3].name} : Was out of town on a business trip at the time of the murder. Several colleagues can confirm their whereabouts and they have receipts for the travel expenses.`;
-  this.playableCharacters[3].clue1=clue1D;
+  let clue4C = `${this.playableCharacters[2].name} : claims to have been working late at the office at the time of the murder, but there is no one to confirm the story.`;
+  this.playableCharacters[2].clue4 = clue4C;
 
-  let clue2D=`${this.playableCharacters[3].name} : was attending a seminar at a local university at the time of the murder. The organizers and attendees can confirm their presence.`;
-  this.playableCharacters[3].clue2=clue2D;
+  let backStory4 = `${this.playableCharacters[3].name} A jealous colleague who was passed over for a promotion that the victim received.`;
+  this.playableCharacters[3].backStory = backStory4;
 
-  let clue3D=`${this.playableCharacters[3].name} : was seen arguing with the victim in their office on the day of the murder. Claims it was just a disagreement over a project, but other witnesses heard shouting and saw them storming out.`;
-  this.playableCharacters[3].clue3=clue3D;
+  let clue1D = `${this.playableCharacters[3].name} : Was out of town on a business trip at the time of the murder. Several colleagues can confirm their whereabouts and they have receipts for the travel expenses.`;
+  this.playableCharacters[3].clue1 = clue1D;
 
-  let clue4D=`${this.playableCharacters[3].name} : claims to have been at home watching TV at the time of the murder, but there is no one to confirm their story.`;
-  this.playableCharacters[3].clue4=clue4D;
+  let clue2D = `${this.playableCharacters[3].name} : was attending a seminar at a local university at the time of the murder. The organizers and attendees can confirm their presence.`;
+  this.playableCharacters[3].clue2 = clue2D;
 
-  let backStory5=`${this.playableCharacters[4].name} A rival business partner who wanted to eliminate the victim as competition in the industry.`;
-  this.playableCharacters[4].backStory=backStory5;
+  let clue3D = `${this.playableCharacters[3].name} : was seen arguing with the victim in their office on the day of the murder. Claims it was just a disagreement over a project, but other witnesses heard shouting and saw them storming out.`;
+  this.playableCharacters[3].clue3 = clue3D;
 
-  let clue1E =`${this.playableCharacters[4].name} : was at a charity event at the time of the murder, and several high-profile guests can confirm their presence. They also donated a significant sum of money to the charity that evening, which was documented.`;
-  this.playableCharacters[4].clue1=clue1E;
+  let clue4D = `${this.playableCharacters[3].name} : claims to have been at home watching TV at the time of the murder, but there is no one to confirm their story.`;
+  this.playableCharacters[3].clue4 = clue4D;
 
-  let clue2E=`${this.playableCharacters[4].name} : was meeting with their lawyers at the time of the murder, preparing for a lawsuit. The lawyers can confirm their presence.`;
-  this.playableCharacters[4].clue2=clue2E;
+  let backStory5 = `${this.playableCharacters[4].name} A rival business partner who wanted to eliminate the victim as competition in the industry.`;
+  this.playableCharacters[4].backStory = backStory5;
 
-  let clue3E=`${this.playableCharacters[4].name} : was seen lurking around the victim's office building on the day of the murder. Claims they were just passing through, but no one else saw them in the area.`;
-  this.playableCharacters[4].clue3=clue3E;
+  let clue1E = `${this.playableCharacters[4].name} : was at a charity event at the time of the murder, and several high-profile guests can confirm their presence. They also donated a significant sum of money to the charity that evening, which was documented.`;
+  this.playableCharacters[4].clue1 = clue1E;
 
-  let clue4E=`${this.playableCharacters[4].name} : claims to have been at a bar across town at the time of the murder, but there is no one to confirm their story.`;
-  this.playableCharacters[4].clue4=clue4E;
-  
-  let backStory6=`${this.playableCharacters[5].name} The victim's current bestfriend who had a volatile relationship with him and was known to have fits of rage.`;
-  this.playableCharacters[5].backStory=backStory6;
+  let clue2E = `${this.playableCharacters[4].name} : was meeting with their lawyers at the time of the murder, preparing for a lawsuit. The lawyers can confirm their presence.`;
+  this.playableCharacters[4].clue2 = clue2E;
 
-  let clue1F =`${this.playableCharacters[5].name} : was at a job interview at a law firm across town at the time of the murder, and the interviewer can confirm their presence. They also have an email invitation and a thank-you note from the interview as proof.`;
-  this.playableCharacters[5].clue1=clue1F;
+  let clue3E = `${this.playableCharacters[4].name} : was seen lurking around the victim's office building on the day of the murder. Claims they were just passing through, but no one else saw them in the area.`;
+  this.playableCharacters[4].clue3 = clue3E;
 
-  let clue2F=`${this.playableCharacters[5].name} : was volunteering at a homeless shelter at the time of the murder, and several staff and clients can confirm their presence. They also have a certificate of appreciation from the shelter as proof.`;
-  this.playableCharacters[5].clue2=clue2F;
+  let clue4E = `${this.playableCharacters[4].name} : claims to have been at a bar across town at the time of the murder, but there is no one to confirm their story.`;
+  this.playableCharacters[4].clue4 = clue4E;
 
-  let clue3F=`${this.playableCharacters[5].name} : claims to have been at home alone at the time of the murder, but there is no one to corroborate their story. They also cannot provide any evidence of what they were doing at the time.`;
-  this.playableCharacters[5].clue3=clue3F;
+  let backStory6 = `${this.playableCharacters[5].name} The victim's current bestfriend who had a volatile relationship with him and was known to have fits of rage.`;
+  this.playableCharacters[5].backStory = backStory6;
 
-  let clue4F=`${this.playableCharacters[5].name} : was seen arguing with the victim outside of a coffee shop near the crime scene on the day of the murder. They claim it was just a friendly disagreement, but witnesses saw them shouting and shoving each other.`;
-  this.playableCharacters[5].clue4=clue4F;
-  
-  let backStory7=`${this.playableCharacters[6].name} The victim's neighbor who had a long-standing feud over a property dispute.`;
-  this.playableCharacters[6].backStory=backStory7;
+  let clue1F = `${this.playableCharacters[5].name} : was at a job interview at a law firm across town at the time of the murder, and the interviewer can confirm their presence. They also have an email invitation and a thank-you note from the interview as proof.`;
+  this.playableCharacters[5].clue1 = clue1F;
 
-  let clue1G =`${this.playableCharacters[6].name} : They were at a friend's house for a game night at the time of the murder, and several people can confirm their presence. They also have photos and social media posts from the night as proof.`;
-  this.playableCharacters[6].clue1=clue1G;
+  let clue2F = `${this.playableCharacters[5].name} : was volunteering at a homeless shelter at the time of the murder, and several staff and clients can confirm their presence. They also have a certificate of appreciation from the shelter as proof.`;
+  this.playableCharacters[5].clue2 = clue2F;
 
-  let clue2G=`${this.playableCharacters[6].name} : They were volunteering at a homeless shelter at the time of the murder, and several staff and clients can confirm their presence.`;
-  this.playableCharacters[6].clue2=clue2G;
+  let clue3F = `${this.playableCharacters[5].name} : claims to have been at home alone at the time of the murder, but there is no one to corroborate their story. They also cannot provide any evidence of what they were doing at the time.`;
+  this.playableCharacters[5].clue3 = clue3F;
 
-  let clue3G=`${this.playableCharacters[6].name} : They were seen arguing with the victim near the crime scene on the day of the murder. They claim it was just a heated discussion, but witnesses saw them physically pushing each other.`;
-  this.playableCharacters[6].clue3=clue3G;
+  let clue4F = `${this.playableCharacters[5].name} : was seen arguing with the victim outside of a coffee shop near the crime scene on the day of the murder. They claim it was just a friendly disagreement, but witnesses saw them shouting and shoving each other.`;
+  this.playableCharacters[5].clue4 = clue4F;
 
-  let clue4G=`${this.playableCharacters[6].name} : They claim to have been at home alone at the time of the murder, but there is no one to corroborate their story.`;
-  this.playableCharacters[6].clue4=clue4G;
-  
-  let backStory8=`${this.playableCharacters[7].name} The victim's sibling who was struggling financially and stood to inherit a large sum of money from the victim's estate.`;
-  this.playableCharacters[7].backStory=backStory8;
+  let backStory7 = `${this.playableCharacters[6].name} The victim's neighbor who had a long-standing feud over a property dispute.`;
+  this.playableCharacters[6].backStory = backStory7;
 
-  let clue1H =`${this.playableCharacters[7].name} : was out of town visiting parents at the time of the murder, and several family members can confirm their presence. They also has plane tickets and hotel receipts as proof.`;
-  this.playableCharacters[7].clue1=clue1H;
+  let clue1G = `${this.playableCharacters[6].name} : They were at a friend's house for a game night at the time of the murder, and several people can confirm their presence. They also have photos and social media posts from the night as proof.`;
+  this.playableCharacters[6].clue1 = clue1G;
 
-  let clue2H=`${this.playableCharacters[7].name} : was at a yoga class at the time of the murder, and several classmates can confirm their presence.`;
-  this.playableCharacters[7].clue2=clue2H;
+  let clue2G = `${this.playableCharacters[6].name} : They were volunteering at a homeless shelter at the time of the murder, and several staff and clients can confirm their presence.`;
+  this.playableCharacters[6].clue2 = clue2G;
 
-  let clue3H=`${this.playableCharacters[7].name} : was seen arguing with the victim at a coffee shop on the day of the murder. Claims it was just a friendly disagreement, but witnesses saw them throwing a cup of coffee at the victim.`;
-  this.playableCharacters[7].clue3=clue3H;
+  let clue3G = `${this.playableCharacters[6].name} : They were seen arguing with the victim near the crime scene on the day of the murder. They claim it was just a heated discussion, but witnesses saw them physically pushing each other.`;
+  this.playableCharacters[6].clue3 = clue3G;
 
-  let clue4H=`${this.playableCharacters[7].name} : claims to have been at home studying at the time of the murder, but there is no one to confirm their story.`;
-  this.playableCharacters[7].clue4=clue4H;
-  
-  let backStory9=`${this.playableCharacters[8].name} The victim's former business partner who was forced out of the company and wanted revenge.`;
-  this.playableCharacters[8].backStory=backStory9;
+  let clue4G = `${this.playableCharacters[6].name} : They claim to have been at home alone at the time of the murder, but there is no one to corroborate their story.`;
+  this.playableCharacters[6].clue4 = clue4G;
 
-  let clue1I =`${this.playableCharacters[8].name} : was at a doctor's appointment at the time of the murder, and the doctor can confirm their presence. They also has a receipt from the appointment as proof.`;
-  this.playableCharacters[8].clue1=clue1I;
+  let backStory8 = `${this.playableCharacters[7].name} The victim's sibling who was struggling financially and stood to inherit a large sum of money from the victim's estate.`;
+  this.playableCharacters[7].backStory = backStory8;
 
-  let clue2I=`${this.playableCharacters[8].name} : was at a church service at the time of the murder, and several members of the congregation can confirm their presence.`;
-  this.playableCharacters[8].clue2=clue2I;
+  let clue1H = `${this.playableCharacters[7].name} : was out of town visiting parents at the time of the murder, and several family members can confirm their presence. They also has plane tickets and hotel receipts as proof.`;
+  this.playableCharacters[7].clue1 = clue1H;
 
-  let clue3I=`${this.playableCharacters[8].name} : was seen arguing with the victim in a parking lot near the crime scene on the day of the murder. Claims it was just a business disagreement, but witnesses saw them throwing a punch at the victim.`;
-  this.playableCharacters[8].clue3=clue3I;
+  let clue2H = `${this.playableCharacters[7].name} : was at a yoga class at the time of the murder, and several classmates can confirm their presence.`;
+  this.playableCharacters[7].clue2 = clue2H;
 
-  let clue4I=`${this.playableCharacters[8].name} : claims to have been at home sleeping at the time of the murder, but there is no one to confirm his story.`;
-  this.playableCharacters[8].clue4=clue4I;
+  let clue3H = `${this.playableCharacters[7].name} : was seen arguing with the victim at a coffee shop on the day of the murder. Claims it was just a friendly disagreement, but witnesses saw them throwing a cup of coffee at the victim.`;
+  this.playableCharacters[7].clue3 = clue3H;
 
-  let backStory10=`${this.playableCharacters[9].name} The victim's personal assistant who was caught stealing money from his accounts and was threatened with exposure.`;
-  this.playableCharacters[9].backStory=backStory10;
+  let clue4H = `${this.playableCharacters[7].name} : claims to have been at home studying at the time of the murder, but there is no one to confirm their story.`;
+  this.playableCharacters[7].clue4 = clue4H;
 
-  let clue1J =`${this.playableCharacters[9].name} : was at a movie theater at the time of the murder, and several people who were there with them can confirm their presence. They also has a ticket stub as proof.`;
-  this.playableCharacters[9].clue1=clue1J;
+  let backStory9 = `${this.playableCharacters[8].name} The victim's former business partner who was forced out of the company and wanted revenge.`;
+  this.playableCharacters[8].backStory = backStory9;
 
-  let clue2J=`${this.playableCharacters[9].name} : was at a restaurant having dinner with a friend at the time of the murder, and the friend can confirm their presence.`;
-  this.playableCharacters[9].clue2=clue2J;
+  let clue1I = `${this.playableCharacters[8].name} : was at a doctor's appointment at the time of the murder, and the doctor can confirm their presence. They also has a receipt from the appointment as proof.`;
+  this.playableCharacters[8].clue1 = clue1I;
 
-  let clue3J=`${this.playableCharacters[9].name} : was seen arguing with the victim in a public park near the crime scene on the day of the murder. Claims it was just a minor dispute, but witnesses saw them hitting the victim with a purse`;
-  this.playableCharacters[9].clue3=clue3J;
+  let clue2I = `${this.playableCharacters[8].name} : was at a church service at the time of the murder, and several members of the congregation can confirm their presence.`;
+  this.playableCharacters[8].clue2 = clue2I;
 
-  let clue4J=`${this.playableCharacters[9].name} : claims to have been at home studying at the time of the murder, but there is no one to confirm her story.`;
-  this.playableCharacters[9].clue4=clue4J;
+  let clue3I = `${this.playableCharacters[8].name} : was seen arguing with the victim in a parking lot near the crime scene on the day of the murder. Claims it was just a business disagreement, but witnesses saw them throwing a punch at the victim.`;
+  this.playableCharacters[8].clue3 = clue3I;
+
+  let clue4I = `${this.playableCharacters[8].name} : claims to have been at home sleeping at the time of the murder, but there is no one to confirm his story.`;
+  this.playableCharacters[8].clue4 = clue4I;
+
+  let backStory10 = `${this.playableCharacters[9].name} The victim's personal assistant who was caught stealing money from his accounts and was threatened with exposure.`;
+  this.playableCharacters[9].backStory = backStory10;
+
+  let clue1J = `${this.playableCharacters[9].name} : was at a movie theater at the time of the murder, and several people who were there with them can confirm their presence. They also has a ticket stub as proof.`;
+  this.playableCharacters[9].clue1 = clue1J;
+
+  let clue2J = `${this.playableCharacters[9].name} : was at a restaurant having dinner with a friend at the time of the murder, and the friend can confirm their presence.`;
+  this.playableCharacters[9].clue2 = clue2J;
+
+  let clue3J = `${this.playableCharacters[9].name} : was seen arguing with the victim in a public park near the crime scene on the day of the murder. Claims it was just a minor dispute, but witnesses saw them hitting the victim with a purse`;
+  this.playableCharacters[9].clue3 = clue3J;
+
+  let clue4J = `${this.playableCharacters[9].name} : claims to have been at home studying at the time of the murder, but there is no one to confirm her story.`;
+  this.playableCharacters[9].clue4 = clue4J;
 
 };
 
@@ -520,7 +535,7 @@ function renderCharacterCards() {
   storyNineEl.innerHTML = ourPlayersGame.playableCharacters[8].backStory;
   imageTenEl.src = ourPlayersGame.playableCharacters[9].fileLocation;
   storyTenEl.innerHTML = ourPlayersGame.playableCharacters[9].backStory;
-};
+}
 
 //global function for game
 function startTheGame(GamePlayCharacters) {
@@ -533,8 +548,7 @@ function startTheGame(GamePlayCharacters) {
 }
 
 startTheGame(ourPlayersGame);
-
-
-console.log(ourPlayersGame);
+// localStorage('game', JSON.stringify(ourPlayersGame));
 
 console.log(ourPlayersGame);
+ourPlayersGame.save();

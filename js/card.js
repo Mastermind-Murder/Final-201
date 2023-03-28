@@ -7,3 +7,7 @@ cards.forEach(card => {
     card.classList.toggle('flip');
   });
 });
+
+let ourGame = new GamePlayCharacters();
+ourGame.load();
+console.log(ourGame);

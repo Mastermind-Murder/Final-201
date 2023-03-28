@@ -260,8 +260,8 @@ GamePlayCharacters.prototype.generateKiller = function () {
   let randomKiller = Math.floor(Math.random() * this.playableCharacters.length);
   this.playableCharacters[randomKiller].isKiller = true;
 };
-  //reference collectionsOfCharacters because that is the name of the attribute given in the Characters collection object
-  //characters in play comes from GamePlay characters object
+//reference collectionsOfCharacters because that is the name of the attribute given in the Characters collection object
+//characters in play comes from GamePlay characters object
 
 GamePlayCharacters.prototype.resetGame = function () {
   for (let i = 0; i < this.charachtersInPlay.length; i++) {
@@ -464,14 +464,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
 
 };
 
-//global function for game
-function startTheGame(GamePlayCharacters) {
-  GamePlayCharacters.selectGameplayCharacters();
-  GamePlayCharacters.resetGame();
-  GamePlayCharacters.assignRooms();
-  GamePlayCharacters.assignInfo();
-  GamePlayCharacters.generateKiller();
-}
+
 
 //For --Testing Below --
 
@@ -485,29 +478,63 @@ console.log(ourPlayersGame);
 // console.log(ourPlayersGame);
 startTheGame(ourPlayersGame);
 
-startTheGame(ourPlayersGame);
-let imageOneEl = document.getElementById('character1');
-let imageTwoEl = document.getElementById('character2');
-let imageThreeEl = document.getElementById('character3');
-let imageFourEl = document.getElementById('character4');
-let imageFiveEl = document.getElementById('character5');
-let imageSixEl = document.getElementById('character6');
-let imageSevenEl = document.getElementById('character7');
-let imageEightEl = document.getElementById('character8');
-let imageNineEl = document.getElementById('character9');
-let imageTenEl = document.getElementById('character10');
-console.log(ourPlayersGame.playableCharacters[0].fileLocation);
+function renderCharacterCards() {
+  let imageOneEl = document.getElementById('character1');
+  let storyOneEl = document.getElementById('story1');
+  let imageTwoEl = document.getElementById('character2');
+  let storyTwoEl = document.getElementById('story2');
+  let imageThreeEl = document.getElementById('character3');
+  let storyThreeEl = document.getElementById('story3');
+  let imageFourEl = document.getElementById('character4');
+  let storyFourEl = document.getElementById('story4');
+  let imageFiveEl = document.getElementById('character5');
+  let storyFiveEl = document.getElementById('story5');
+  let imageSixEl = document.getElementById('character6');
+  let storySixEl = document.getElementById('story6');
+  let imageSevenEl = document.getElementById('character7');
+  let storySevenEl = document.getElementById('story7');
+  let imageEightEl = document.getElementById('character8');
+  let storyEightEl = document.getElementById('story8');
+  let imageNineEl = document.getElementById('character9');
+  let storyNineEl = document.getElementById('story9');
+  let imageTenEl = document.getElementById('character10');
+  let storyTenEl = document.getElementById('story10');
 
-imageOneEl.src = ourPlayersGame.playableCharacters[0].fileLocation;
-imageTwoEl.src = ourPlayersGame.playableCharacters[1].fileLocation;
-imageThreeEl.src = ourPlayersGame.playableCharacters[2].fileLocation;
-imageFourEl.src = ourPlayersGame.playableCharacters[3].fileLocation;
-imageFiveEl.src = ourPlayersGame.playableCharacters[4].fileLocation;
-imageSixEl.src = ourPlayersGame.playableCharacters[5].fileLocation;
-imageSevenEl.src = ourPlayersGame.playableCharacters[6].fileLocation;
-imageEightEl.src = ourPlayersGame.playableCharacters[7].fileLocation;
-imageNineEl.src = ourPlayersGame.playableCharacters[8].fileLocation;
-imageTenEl.src = ourPlayersGame.playableCharacters[9].fileLocation;
+  imageOneEl.src = ourPlayersGame.playableCharacters[0].fileLocation;
+  storyOneEl.innerHTML = ourPlayersGame.playableCharacters[0].backStory;
+  imageTwoEl.src = ourPlayersGame.playableCharacters[1].fileLocation;
+  storyTwoEl.innerHTML = ourPlayersGame.playableCharacters[1].backStory;
+  imageThreeEl.src = ourPlayersGame.playableCharacters[2].fileLocation;
+  storyThreeEl.innerHTML = ourPlayersGame.playableCharacters[2].backStory;
+  imageFourEl.src = ourPlayersGame.playableCharacters[3].fileLocation;
+  storyFourEl.innerHTML = ourPlayersGame.playableCharacters[3].backStory;
+  imageFiveEl.src = ourPlayersGame.playableCharacters[4].fileLocation;
+  storyFiveEl.innerHTML = ourPlayersGame.playableCharacters[4].backStory;
+  imageSixEl.src = ourPlayersGame.playableCharacters[5].fileLocation;
+  storySixEl.innerHTML = ourPlayersGame.playableCharacters[5].backStory;
+  imageSevenEl.src = ourPlayersGame.playableCharacters[6].fileLocation;
+  storySevenEl.innerHTML = ourPlayersGame.playableCharacters[6].backStory;
+  imageEightEl.src = ourPlayersGame.playableCharacters[7].fileLocation;
+  storyEightEl.innerHTML = ourPlayersGame.playableCharacters[7].backStory;
+  imageNineEl.src = ourPlayersGame.playableCharacters[8].fileLocation;
+  storyNineEl.innerHTML = ourPlayersGame.playableCharacters[8].backStory;
+  imageTenEl.src = ourPlayersGame.playableCharacters[9].fileLocation;
+  storyTenEl.innerHTML = ourPlayersGame.playableCharacters[9].backStory;
+};
+
+//global function for game
+function startTheGame(GamePlayCharacters) {
+  GamePlayCharacters.selectGameplayCharacters();
+  GamePlayCharacters.resetGame();
+  GamePlayCharacters.assignRooms();
+  GamePlayCharacters.assignInfo();
+  GamePlayCharacters.generateKiller();
+  renderCharacterCards();
+}
+
+startTheGame(ourPlayersGame);
+
+
 console.log(ourPlayersGame);
 
 console.log(ourPlayersGame);

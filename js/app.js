@@ -14,14 +14,13 @@ function Character(name, age, fileLocation) {
   this.clue1;
   this.clue2;
   this.clue3;
-
   this.isKiller = false;
   this.timesUsed = 0;// need to use this somewhere
 
   this.backStory = '';
   this.badAlibi = '';
   this.goodAlibi = '';
-
+  this.backStory;
   this.roomLocation = 0;
 
 }
@@ -116,26 +115,26 @@ Character.prototype.setClue3 = function (txt) {
 
 
 
-let gameCharacter1 = new Character('Robert Thomas', 29, 'assets for clue game/Robert Thomas (younger brother, 1).jpg');
-let gameCharacter2 = new Character('Samantha Thomas', 26, 'assets for clue game/Samantha Thomas (wife, 2).jpg');
-let gameCharacter3 = new Character('Richard Johnson', 21, 'assets for clue game/Richard Johnson (business partner, 3).jpg');
-let gameCharacter4 = new Character('Cynthia Green', 22, 'assets for clue game/Cynthia Green (personal assistant, 4).jpg');
-let gameCharacter5 = new Character('Eric Davis', 25, 'assets for clue game/Eric Davis (bodyguard, 5).jpg', 'Railgun');
-let gameCharacter6 = new Character('Caroline Rogers', 28, 'assets for clue game/Caroline Rogers, (Victim\'s ex-girlfriend, 6).jpg');
+let gameCharacter1 = new Character('Robert Thomas', 35, 'assets for clue game/Robert Thomas (younger brother, 1).jpg');
+let gameCharacter2 = new Character('Samantha Thomas', 38, 'assets for clue game/Samantha Thomas (wife, 2).jpg');
+let gameCharacter3 = new Character('Richard Johnson', 33, 'assets for clue game/Richard Johnson (business partner, 3).jpg');
+let gameCharacter4 = new Character('Cynthia Green', 42, 'assets for clue game/Cynthia Green (personal assistant, 4).jpg');
+let gameCharacter5 = new Character('Eric Davis', 39, 'assets for clue game/Eric Davis (bodyguard, 5).jpg', 'Railgun');
+let gameCharacter6 = new Character('Caroline Rogers', 35, 'assets for clue game/Caroline Rogers, (Victim\'s ex-girlfriend, 6).jpg');
 let gameCharacter7 = new Character('William Jones', 43, 'assets for clue game/William Jones (accountant, 7).jpg');
 let gameCharacter8 = new Character('Rebecca Taylor', 45, 'assets for clue game/Rebecca Taylor (secretary, 8).jpg');
-let gameCharacter9 = new Character('Anthony Brown', 13, 'assets for clue game/Anthony Brown (Competitor, 9).jpg');
-let gameCharacter10 = new Character('Lisa Williams', 23, 'assets for clue game/Lisa Williams (neighbor, 10).jpg');
+let gameCharacter9 = new Character('Anthony Brown', 43, 'assets for clue game/Anthony Brown (Competitor, 9).jpg');
+let gameCharacter10 = new Character('Lisa Williams', 38, 'assets for clue game/Lisa Williams (neighbor, 10).jpg');
 let gameCharacter11 = new Character('Timothy Baker', 41, 'assets for clue game/Timothy Baker (chauffeur, 11).jpg');
 let gameCharacter12 = new Character('Maria Rodriguez', 37, 'assets for clue game/Maria Rodriguez (housekeeper, 12).jpg');
 let gameCharacter13 = new Character('Lawrence Campbell', 41, 'assets for clue game/Lawrence Campbell (former employee, 13).jpg');
 let gameCharacter14 = new Character('Jessica Parker', 42, 'assets for clue game/Jessica Parker (former lover, 14).jpg');
 let gameCharacter15 = new Character('Patrick Nelson', 69, 'assets for clue game/Patrick Nelson (lawyer, 15).jpg');
 let gameCharacter16 = new Character('Michael Wright', 38, 'assets for clue game/Michael Wright (stockbroker, 16).jpg');
-let gameCharacter17 = new Character('Rachel Scott', 26, 'assets for clue game/Rachel Scott (journalist-friend, 17).jpg');
-let gameCharacter18 = new Character('Samuel Young', 12, 'assets for clue game/Samuel Young (rival, 18).jpg');
-let gameCharacter19 = new Character('Emily Collins', 15, 'assets for clue game/Emily Collins (doctor, 19).jpg');
-let gameCharacter20 = new Character('Jacob Martinez', 27, 'assets for clue game/Jacob Martinez (security guard, 20).jpg ');
+let gameCharacter17 = new Character('Rachel Scott', 41, 'assets for clue game/Rachel Scott (journalist-friend, 17).jpg');
+let gameCharacter18 = new Character('Samuel Young', 37, 'assets for clue game/Samuel Young (rival, 18).jpg');
+let gameCharacter19 = new Character('Emily Collins', 32, 'assets for clue game/Emily Collins (doctor, 19).jpg');
+let gameCharacter20 = new Character('Jacob Martinez', 40, 'assets for clue game/Jacob Martinez (security guard, 20).jpg ');
 
 gameCharacter1.setBadAlibi('Robert claimed to have been at home at the time of the murder, but there was no one who could verify his alibi.');
 gameCharacter1.setGoodAliby('Robert claimed to have been at a business meeting at the time of the murder, and several colleagues confirmed his alibi.');
@@ -259,6 +258,8 @@ GamePlayCharacters.prototype.generateKiller = function () {
   let randomKiller = Math.floor(Math.random() * this.playableCharacters.length);
   this.playableCharacters[randomKiller].isKiller = true;
 };
+  //reference collectionsOfCharacters because that is the name of the attribute given in the Characters collection object
+  //characters in play comes from GamePlay characters object
 
 GamePlayCharacters.prototype.resetGame = function () {
   for (let i = 0; i < this.charachtersInPlay.length; i++) {
@@ -307,86 +308,38 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function (guessedCharacte
 };
 
 GamePlayCharacters.prototype.assignInfo = function () {
-  let inkpen = ['inkpen', 'hole in eye socket', 'hole in neck', 'blood coming from chest'];
-  for (let i = 0; i < inkpen.length; i++) {
-    this.playableCharacters[0].setDefaultWeapon(inkpen[0]);
-    this.playableCharacters[0].setClue1(inkpen[1]);
-    this.playableCharacters[0].setClue2(inkpen[2]);
-    this.playableCharacters[0].setClue2(inkpen[3]);
-  }
+ 
+  let backStory=`${this.playableCharacters[0].name} :The victim's business partner who was in severe debt and stood to gain financially from the victim's death`
+  this.playableCharacters[0].backStory=backStory;
+  
+  let backStory2=`${this.playableCharacters[1].name} The victim's ex-friend who had a history of stalking him and was angry over their recent fallout.`
+  this.playableCharacters[1].backStory=backStory2;
+ 
+  let backStory3=`${this.playableCharacters[2].name} A former employee who was fired by the victim and had a long-standing grudge against him.`
+  this.playableCharacters[2].backStory=backStory3;
+  
+  let backStory4=`${this.playableCharacters[3].name} A jealous colleague who was passed over for a promotion that the victim received.`
+  this.playableCharacters[3].backStory=backStory4;
+  
+  let backStory5=`${this.playableCharacters[4].name} A rival business partner who wanted to eliminate the victim as competition in the industry.`
+  this.playableCharacters[4].backStory=backStory5;
+  
+  let backStory6=`${this.playableCharacters[5].name} The victim's current bestfriend who had a volatile relationship with him and was known to have fits of rage.`
+  this.playableCharacters[5].backStory=backStory6;
+  
+  let backStory7=`${this.playableCharacters[6].name} The victim's neighbor who had a long-standing feud over a property dispute.`
+  this.playableCharacters[6].backStory=backStory7;
+  
+  let backStory8=`${this.playableCharacters[7].name} The victim's sibling who was struggling financially and stood to inherit a large sum of money from the victim's estate.`
+  this.playableCharacters[7].backStory=backStory8;
+  
+  let backStory9=`${this.playableCharacters[8].name} The victim's former business partner who was forced out of the company and wanted revenge.`
+  this.playableCharacters[8].backStory=backStory9;
 
-  let arsenic = ['Arsenic', 'foaming at the mouth', 'vomit near vivtim', 'blood coming from nose'];
-  for (let i = 0; i < arsenic.length; i++) {
-    this.playableCharacters[1].setDefaultWeapon(arsenic[0]);
-    this.playableCharacters[1].setClue1(arsenic[1]);
-    this.playableCharacters[1].setClue2(arsenic[2]);
-    this.playableCharacters[1].setClue2(arsenic[3]);
-  }
-
-  let candleHolder = ['candleholder', 'largebruise on forehead', 'large indentation on head', 'candle laying next to victim'];
-  for (let i = 0; i < candleHolder.length; i++) {
-    this.playableCharacters[2].setDefaultWeapon(candleHolder[0]);
-    this.playableCharacters[2].setClue1(candleHolder[1]);
-    this.playableCharacters[2].setClue2(candleHolder[2]);
-    this.playableCharacters[2].setClue2(candleHolder[3]);
-  }
-
-  let snakeBite = ['snake bite', '2 small holes in hand', 'bluish tint to lower arm', 'swelling of the hand'];
-  for (let i = 0; i < snakeBite.length; i++) {
-    this.playableCharacters[3].setDefaultWeapon(snakeBite[0]);
-    this.playableCharacters[3].setClue1(snakeBite[1]);
-    this.playableCharacters[3].setClue2(snakeBite[2]);
-    this.playableCharacters[3].setClue2(snakeBite[3]);
-  }
-
-  let carbonMonoxide = ['carbon monoxide', 'complained of being dizzy', 'complained of having a headache', 'did not speak coherently'];
-  for (let i = 0; i < candleHolder.length; i++) {
-    this.playableCharacters[4].setDefaultWeapon(carbonMonoxide[0]);
-    this.playableCharacters[4].setClue1(carbonMonoxide[1]);
-    this.playableCharacters[4].setClue2(carbonMonoxide[2]);
-    this.playableCharacters[4].setClue2(carbonMonoxide[3]);
-  }
-
-  let yoyo = ['yoyo', 'red marks on the neck', 'burst blood vessels around the eyes', 'purple bruises on the neck'];
-  for (let i = 0; i < yoyo.length; i++) {
-    this.playableCharacters[5].setDefaultWeapon(yoyo[0]);
-    this.playableCharacters[5].setClue1(yoyo[1]);
-    this.playableCharacters[5].setClue2(yoyo[2]);
-    this.playableCharacters[5].setClue2(yoyo[3]);
-  }
-
-  let champagneBottle = ['champagne bottle', 'broken glass around', 'shards of glass around head', 'blood splatter on the ceiling'];
-  for (let i = 0; i < yoyo.champagneBottle; i++) {
-    this.playableCharacters[6].setDefaultWeapon(champagneBottle[0]);
-    this.playableCharacters[6].setClue1(champagneBottle[1]);
-    this.playableCharacters[6].setClue2(champagneBottle[2]);
-    this.playableCharacters[6].setClue2(champagneBottle[3]);
-  }
-
-  let drowning = ['drowining', 'the hair is wet', 'the stomach looks bloated full of water', 'the body is laying un-naturaly'];
-  for (let i = 0; i < drowning.champagneBottle; i++) {
-    this.playableCharacters[7].setDefaultWeapon(drowning[0]);
-    this.playableCharacters[7].setClue1(drowning[1]);
-    this.playableCharacters[7].setClue2(drowning[2]);
-    this.playableCharacters[7].setClue2(drowning[3]);
-  }
-
-  let powerDrill = ['power drill', 'Nail-sized hole in the side of victim’s head', 'Drill bits scattered on the floor', 'An extension cord is splattered with blood nearby'];
-  for (let i = 0; i < powerDrill.champagneBottle; i++) {
-    this.playableCharacters[8].setDefaultWeapon(powerDrill[0]);
-    this.playableCharacters[8].setClue1(powerDrill[1]);
-    this.playableCharacters[8].setClue2(powerDrill[2]);
-    this.playableCharacters[8].setClue2(powerDrill[3]);
-  }
-
-  let vape = ['vape', 'hands are burned', 'small smoking device next to victim', 'pocket seems to have been burned'];
-  for (let i = 0; i < vape.champagneBottle; i++) {
-    this.playableCharacters[9].setDefaultWeapon(vape[0]);
-    this.playableCharacters[9].setClue1(vape[1]);
-    this.playableCharacters[9].setClue2(vape[2]);
-    this.playableCharacters[9].setClue2(vape[3]);
-  }
-};
+  
+  let backStory10=`${this.playableCharacters[9].name} The victim's personal assistant who was caught stealing money from his accounts and was threatened with exposure.`
+  this.playableCharacters[9].backStory=backStory10;
+}
 
 //global function for game
 function startTheGame(GamePlayCharacters) {

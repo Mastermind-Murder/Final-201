@@ -68,3 +68,32 @@ body section {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
+
+.team-info {
+    border: solid thin red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 1600px;
+    width: 1200px;
+}
+
+.team-header {
+    border: solid thin red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#Ben-head {
+    padding: 0px 25px
+}
+
+#Juan-head {
+    padding: 0px 0px 0px 45px;
+}

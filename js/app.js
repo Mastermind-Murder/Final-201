@@ -5,12 +5,15 @@ function Character(name, age, fileLocation, defaultWeapon) {
 
   this.name = name;
   this.age = age;
+  this.pronoun = "he";
   this.fileLocation = fileLocation;
   this.defaultWeapon = defaultWeapon;
   this.id = this.name + this.age;
   //TODO: GETTER AND SETTER BELOW
   this.howDied = `${this.name} has been found dead, wounds look like they got hit with ${this.defaultWeapon} blah blah blah`;
-
+  this.clue1 = 
+  this.clue2 = 
+  this.clue3 = 
   this.isKiller = false;
   this.timesUsed = 0;// need to use this somewhere
 

@@ -160,7 +160,7 @@ gameCharacter16.setGoodAliby('Michael claimed to have been at home with his fami
 gameCharacter17.setGoodAliby('Rachel claimed to have been at a press conference at the time of the murder, and several colleagues confirmed her alibi.');
 gameCharacter18.setGoodAliby('Samuel claimed to have been at home with his family at the time of the murder, and his family members confirmed his alibi.');
 gameCharacter19.setGoodAliby('Emily claimed to have been at the hospital at the time of the murder, and hospital records confirmed her story.');
-gameCharacter20.setGoodAliby(' Jacob claimed to have been on duty guarding Alexander’s office at the time of the murder, and several colleagues confirmed his alibi.');
+gameCharacter20.setGoodAliby('Jacob claimed to have been on duty guarding Alexander’s office at the time of the murder, and several colleagues confirmed his alibi.');
 
 //charachter collection constructor this will hold all characters for the game
 function CharacterCollection() {
@@ -256,10 +256,8 @@ GamePlayCharacters.prototype.removeCharacter = function (Character) {
 };
 
 GamePlayCharacters.prototype.generateKiller = function () {
-  let randomKiller = Math.floor(Math.random() * this.charachtersInPlay.collectionOfCharacters.length);
-  this.playableCharacters[randomKiller].setIsKiller(true);
-  //reference collectionsOfCharacters because that is the name of the attribute given in the Characters collection object
-  //characters in play comes from GamePlay characters object
+  let randomKiller = Math.floor(Math.random() * this.playableCharacters.length);
+  this.playableCharacters[randomKiller].isKiller = true;
 };
 
 GamePlayCharacters.prototype.resetGame = function () {
@@ -424,16 +422,16 @@ let imageNineEl = document.getElementById('character9');
 let imageTenEl = document.getElementById('character10');
 console.log(ourPlayersGame.playableCharacters[0].fileLocation);
 
-imageOneEl.src = ourPlayersGame.playableCharacters[1].fileLocation;
-imageTwoEl.src = ourPlayersGame.playableCharacters[2].fileLocation;
-imageThreeEl.src = ourPlayersGame.playableCharacters[3].fileLocation;
-imageFourEl.src = ourPlayersGame.playableCharacters[4].fileLocation;
-imageFiveEl.src = ourPlayersGame.playableCharacters[5].fileLocation;
-imageSixEl.src = ourPlayersGame.playableCharacters[6].fileLocation;
-imageSevenEl.src = ourPlayersGame.playableCharacters[7].fileLocation;
-imageEightEl.src = ourPlayersGame.playableCharacters[8].fileLocation;
-imageNineEl.src = ourPlayersGame.playableCharacters[9].fileLocation;
-imageTenEl.src = ourPlayersGame.playableCharacters[10].fileLocation;
+imageOneEl.src = ourPlayersGame.playableCharacters[0].fileLocation;
+imageTwoEl.src = ourPlayersGame.playableCharacters[1].fileLocation;
+imageThreeEl.src = ourPlayersGame.playableCharacters[2].fileLocation;
+imageFourEl.src = ourPlayersGame.playableCharacters[3].fileLocation;
+imageFiveEl.src = ourPlayersGame.playableCharacters[4].fileLocation;
+imageSixEl.src = ourPlayersGame.playableCharacters[5].fileLocation;
+imageSevenEl.src = ourPlayersGame.playableCharacters[6].fileLocation;
+imageEightEl.src = ourPlayersGame.playableCharacters[7].fileLocation;
+imageNineEl.src = ourPlayersGame.playableCharacters[8].fileLocation;
+imageTenEl.src = ourPlayersGame.playableCharacters[9].fileLocation;
 console.log(ourPlayersGame);
 
 console.log(ourPlayersGame);

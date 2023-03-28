@@ -412,10 +412,28 @@ console.log(ourPlayersGame);
 startTheGame(ourPlayersGame);
 
 startTheGame(ourPlayersGame);
-let imageEl = document.getElementById('character1');
+let imageOneEl = document.getElementById('character1');
+let imageTwoEl = document.getElementById('character2');
+let imageThreeEl = document.getElementById('character3');
+let imageFourEl = document.getElementById('character4');
+let imageFiveEl = document.getElementById('character5');
+let imageSixEl = document.getElementById('character6');
+let imageSevenEl = document.getElementById('character7');
+let imageEightEl = document.getElementById('character8');
+let imageNineEl = document.getElementById('character9');
+let imageTenEl = document.getElementById('character10');
 console.log(ourPlayersGame.playableCharacters[0].fileLocation);
 
-imageEl.src = ourPlayersGame.playableCharacters[1].fileLocation;
+imageOneEl.src = ourPlayersGame.playableCharacters[1].fileLocation;
+imageTwoEl.src = ourPlayersGame.playableCharacters[2].fileLocation;
+imageThreeEl.src = ourPlayersGame.playableCharacters[3].fileLocation;
+imageFourEl.src = ourPlayersGame.playableCharacters[4].fileLocation;
+imageFiveEl.src = ourPlayersGame.playableCharacters[5].fileLocation;
+imageSixEl.src = ourPlayersGame.playableCharacters[6].fileLocation;
+imageSevenEl.src = ourPlayersGame.playableCharacters[7].fileLocation;
+imageEightEl.src = ourPlayersGame.playableCharacters[8].fileLocation;
+imageNineEl.src = ourPlayersGame.playableCharacters[9].fileLocation;
+imageTenEl.src = ourPlayersGame.playableCharacters[10].fileLocation;
 console.log(ourPlayersGame);
 
 console.log(ourPlayersGame);

@@ -11,10 +11,10 @@ function Character(name, age, fileLocation, defaultWeapon) {
   this.id = this.name + this.age;
   //TODO: GETTER AND SETTER BELOW
   this.howDied = `${this.name} has been found dead, wounds look like they got hit with ${this.defaultWeapon} blah blah blah`;
-  this.clue1 = 
-  this.clue2 = 
-  this.clue3 = 
-  this.isKiller = false;
+  this.clue1 =
+    this.clue2 =
+    this.clue3 =
+    this.isKiller = false;
   this.timesUsed = 0;// need to use this somewhere
 
   this.backStory = '';
@@ -22,7 +22,7 @@ function Character(name, age, fileLocation, defaultWeapon) {
   this.goodAlibi = '';
 
   this.roomLocation = 0;
-  
+
 }
 
 
@@ -80,26 +80,26 @@ Character.prototype.setRoomLocation = function (newRoom) {
 
 
 
-let gameCharacter1 = new Character('Robert Thomas',29,'assets for clue game/Robert Thomas (younger brother, 1).jpg', 'Plasma rifle');
-let gameCharacter2 = new Character('Samantha Thomas',26, 'assets for clue game/Samantha Thomas (wife, 2).jpg', 'Gravity hammer');
-let gameCharacter3 = new Character('Richard Johnson',21, 'assets for clue game/Richard Johnson (business partner, 3).jpg', 'Vibroblade');
+let gameCharacter1 = new Character('Robert Thomas', 29, 'assets for clue game/Robert Thomas (younger brother, 1).jpg', 'Plasma rifle');
+let gameCharacter2 = new Character('Samantha Thomas', 26, 'assets for clue game/Samantha Thomas (wife, 2).jpg', 'Gravity hammer');
+let gameCharacter3 = new Character('Richard Johnson', 21, 'assets for clue game/Richard Johnson (business partner, 3).jpg', 'Vibroblade');
 let gameCharacter4 = new Character('Cynthia Green', 22, 'assets for clue game/Cynthia Green (personal assistant, 4).jpg', 'Sonic disruptor');
 let gameCharacter5 = new Character('Eric Davis', 25, 'assets for clue game/Eric Davis (bodyguard, 5).jpg', 'Railgun');
-let gameCharacter6 = new Character('Caroline Rogers',28, 'assets for clue game/Caroline Rogers, (Victim\'s ex-girlfriend, 6).jpg','Acid launcher');
-let gameCharacter7 = new Character('William Jones',43, 'assets for clue game/William Jones (accountant, 7).jpg', 'Flamethrower');
-let gameCharacter8 = new Character('Rebecca Taylor',45, 'assets for clue game/Rebecca Taylor (secretary, 8).jpg', 'Neural disruptor');
-let gameCharacter9 = new Character('Anthony Brown',13, 'assets for clue game/Anthony Brown (Competitor, 9).jpg', 'Singularity cannon');
-let gameCharacter10 = new Character('Lisa Williams',23, 'assets for clue game/Lisa Williams (neighbor, 10).jpg', 'Poison dart gun');
-let gameCharacter11 = new Character('Timothy Baker',41, 'assets for clue game/Timothy Baker (chauffeur, 11).jpg', 'Energy sword');
-let gameCharacter12 = new Character('Maria Rodriguez',37, 'assets for clue game/Maria Rodriguez (housekeeper, 12).jpg', 'Arc caster');
+let gameCharacter6 = new Character('Caroline Rogers', 28, 'assets for clue game/Caroline Rogers, (Victim\'s ex-girlfriend, 6).jpg', 'Acid launcher');
+let gameCharacter7 = new Character('William Jones', 43, 'assets for clue game/William Jones (accountant, 7).jpg', 'Flamethrower');
+let gameCharacter8 = new Character('Rebecca Taylor', 45, 'assets for clue game/Rebecca Taylor (secretary, 8).jpg', 'Neural disruptor');
+let gameCharacter9 = new Character('Anthony Brown', 13, 'assets for clue game/Anthony Brown (Competitor, 9).jpg', 'Singularity cannon');
+let gameCharacter10 = new Character('Lisa Williams', 23, 'assets for clue game/Lisa Williams (neighbor, 10).jpg', 'Poison dart gun');
+let gameCharacter11 = new Character('Timothy Baker', 41, 'assets for clue game/Timothy Baker (chauffeur, 11).jpg', 'Energy sword');
+let gameCharacter12 = new Character('Maria Rodriguez', 37, 'assets for clue game/Maria Rodriguez (housekeeper, 12).jpg', 'Arc caster');
 let gameCharacter13 = new Character('Lawrence Campbell', 41, 'assets for clue game/Lawrence Campbell (former employee, 13).jpg', 'Freeze ray');
-let gameCharacter14 = new Character('Jessica Parker',42, 'assets for clue game/Jessica Parker (former lover, 14).jpg', 'Smart grenade launcher');
+let gameCharacter14 = new Character('Jessica Parker', 42, 'assets for clue game/Jessica Parker (former lover, 14).jpg', 'Smart grenade launcher');
 let gameCharacter15 = new Character('Patrick Nelson', 69, 'assets for clue game/Patrick Nelson (lawyer, 15).jpg', 'EMP rifle');
 let gameCharacter16 = new Character('Michael Wright', 38, 'assets for clue game/Michael Wright (stockbroker, 16).jpg', 'Quantum destabilizer');
-let gameCharacter17 = new Character('Rachel Scott',26, 'assets for clue game/Rachel Scott (journalist-friend, 17).jpg', 'Tesla coil whip');
-let gameCharacter18 = new Character('Samuel Young',12, 'assets for clue game/Samuel Young (rival, 18).jpg', 'Nano swarm grenades');
-let gameCharacter19 = new Character('Emily Collins',15, 'assets for clue game/Emily Collins (doctor, 19).jpg', 'Dark matter cannon');
-let gameCharacter20 = new Character('Jacob Martinez', 27,'assets for clue game/Jacob Martinez (security guard, 20).jpg ', 'Graviton pulse rifle');
+let gameCharacter17 = new Character('Rachel Scott', 26, 'assets for clue game/Rachel Scott (journalist-friend, 17).jpg', 'Tesla coil whip');
+let gameCharacter18 = new Character('Samuel Young', 12, 'assets for clue game/Samuel Young (rival, 18).jpg', 'Nano swarm grenades');
+let gameCharacter19 = new Character('Emily Collins', 15, 'assets for clue game/Emily Collins (doctor, 19).jpg', 'Dark matter cannon');
+let gameCharacter20 = new Character('Jacob Martinez', 27, 'assets for clue game/Jacob Martinez (security guard, 20).jpg ', 'Graviton pulse rifle');
 
 gameCharacter1.setBadAlibi('Robert claimed to have been at home at the time of the murder, but there was no one who could verify his alibi.');
 gameCharacter1.setGoodAliby('Robert claimed to have been at a business meeting at the time of the murder, and several colleagues confirmed his alibi.');
@@ -142,8 +142,8 @@ CharacterCollection.prototype.addCharacter = function (Character) {
   }
 };
 
-CharacterCollection.prototype.addBadAlibi = function(){
-  for(let i =0; i<this.collectionOfCharacters.length;i++){
+CharacterCollection.prototype.addBadAlibi = function () {
+  for (let i = 0; i < this.collectionOfCharacters.length; i++) {
     this.collectionOfCharacters[i].setBadAlibi('Claimed to have been at home at the time of the murder, but there was no one who could verify his alibi.');
   }
 };
@@ -187,23 +187,23 @@ function GamePlayCharacters(arrayOfCharacters) {
 
 }
 
-GamePlayCharacters.prototype.selectGameplayCharacters = function(){
+GamePlayCharacters.prototype.selectGameplayCharacters = function () {
   let tempCharacters = [];
   let countToBePushed = 10;
   let generatedNumbers = [];
 
-  do{
+  do {
     let randomNumber = Math.floor(Math.random() * this.charachtersInPlay.collectionOfCharacters.length);
 
-    if(generatedNumbers.includes(randomNumber)){
+    if (generatedNumbers.includes(randomNumber)) {
       console.log(`this number ${randomNumber} is already used`);
-    }else{
+    } else {
       tempCharacters.push(this.charachtersInPlay.collectionOfCharacters[randomNumber]);
       countToBePushed--;
     }
     generatedNumbers.push(randomNumber);
 
-  }while(countToBePushed > 0);
+  } while (countToBePushed > 0);
 
   this.playableCharacters = tempCharacters;
 
@@ -234,7 +234,7 @@ GamePlayCharacters.prototype.resetGame = function () {
 
 //assign rooms for characters in Collection Of Characters array
 GamePlayCharacters.prototype.assignRooms = function () {
-  let rooms = [1,1,1,1,1,2,2,2,2,2];
+  let rooms = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2];
 
   //shuffle array for rooms
   for (let i = rooms.length - 1; i > 0; i--) {
@@ -254,21 +254,21 @@ GamePlayCharacters.prototype.assignRooms = function () {
 };
 
 //this will check if selected item is a killer
-GamePlayCharacters.prototype.checkIfSelectedIsKiller = function(guessedCharacter){
+GamePlayCharacters.prototype.checkIfSelectedIsKiller = function (guessedCharacter) {
 
-  do{
-    for(let i = 0; i< this.charachtersInPlay.collectionOfCharacters.length; i++){
-      if(guessedCharacter.checkIsKiller()){
+  do {
+    for (let i = 0; i < this.charachtersInPlay.collectionOfCharacters.length; i++) {
+      if (guessedCharacter.checkIsKiller()) {
         this.winGame = true;
         console.log('guessed the killer');
         alert('The killer was captured/killed');
-      } else{
+      } else {
         this.guessedKiller++;
         console.log(`${this.guessedKiller} is current guessed killer count `);
       }
     }
 
-  }while (this.guessedKiller < this.guessLimit);//check here
+  } while (this.guessedKiller < this.guessLimit);//check here
 
 };
 
@@ -310,8 +310,8 @@ startTheGame(ourPlayersGame);
 
 console.log(ourPlayersGame);
 
-let arsenic = ['Arsenic', 'foaming at the mouth', 'vomit near vivtim','blood coming from nose'];
-for(let i = 0; i < arsenic.length; i++){
+let arsenic = ['Arsenic', 'foaming at the mouth', 'vomit near vivtim', 'blood coming from nose'];
+for (let i = 0; i < arsenic.length; i++) {
   this.playableCharacters[1].setDefaultWeapon(arsenic[0]);
   this.playableCharacters[1].setClue1(arsenic[1]);
   this.playableCharacters[1].setClue2(arsenic[2]);
@@ -319,7 +319,7 @@ for(let i = 0; i < arsenic.length; i++){
 }
 
 let candleHolder = ['candleholder', 'largebruise on forehead', 'large indentation on head', 'candle laying next to victim'];
-for(let i = 0; i < candleHolder.length; i++){
+for (let i = 0; i < candleHolder.length; i++) {
   this.playableCharacters[2].setDefaultWeapon(candleHolder[0]);
   this.playableCharacters[2].setClue1(candleHolder[1]);
   this.playableCharacters[2].setClue2(candleHolder[2]);
@@ -327,7 +327,7 @@ for(let i = 0; i < candleHolder.length; i++){
 }
 
 let snakeBite = ['snake bite', '2 small holes in hand', 'bluish tint to lower arm', 'swelling of the hand'];
-for(let i = 0; i < snakeBite.length; i++){
+for (let i = 0; i < snakeBite.length; i++) {
   this.playableCharacters[3].setDefaultWeapon(snakeBite[0]);
   this.playableCharacters[3].setClue1(snakeBite[1]);
   this.playableCharacters[3].setClue2(snakeBite[2]);
@@ -335,7 +335,7 @@ for(let i = 0; i < snakeBite.length; i++){
 }
 
 let carbonMonoxide = ['carbon monoxide', 'complained of being dizzy', 'complained of having a headache', 'did not speak coherently'];
-for(let i = 0; i < candleHolder.length; i++){
+for (let i = 0; i < candleHolder.length; i++) {
   this.playableCharacters[4].setDefaultWeapon(carbonMonoxide[0]);
   this.playableCharacters[4].setClue1(carbonMonoxide[1]);
   this.playableCharacters[4].setClue2(carbonMonoxide[2]);
@@ -343,7 +343,7 @@ for(let i = 0; i < candleHolder.length; i++){
 }
 
 let yoyo = ['yoyo', 'red marks on the neck', 'burst blood vessels around the eyes', 'purple bruises on the neck'];
-for(let i = 0; i < yoyo.length; i++){
+for (let i = 0; i < yoyo.length; i++) {
   this.playableCharacters[5].setDefaultWeapon(yoyo[0]);
   this.playableCharacters[5].setClue1(yoyo[1]);
   this.playableCharacters[5].setClue2(yoyo[2]);
@@ -351,7 +351,7 @@ for(let i = 0; i < yoyo.length; i++){
 }
 
 let champagneBottle = ['champagne bottle', 'broken glass around', 'shards of glass around head', 'blood splatter on the ceiling'];
-for(let i = 0; i < yoyo.champagneBottle; i++){
+for (let i = 0; i < yoyo.champagneBottle; i++) {
   this.playableCharacters[6].setDefaultWeapon(champagneBottle[0]);
   this.playableCharacters[6].setClue1(champagneBottle[1]);
   this.playableCharacters[6].setClue2(champagneBottle[2]);
@@ -359,7 +359,7 @@ for(let i = 0; i < yoyo.champagneBottle; i++){
 }
 
 let drowning = ['drowining', 'the hair is wet', 'the stomach looks bloated full of water', 'the body is laying un-naturaly'];
-for(let i = 0; i < drowning.champagneBottle; i++){
+for (let i = 0; i < drowning.champagneBottle; i++) {
   this.playableCharacters[7].setDefaultWeapon(drowning[0]);
   this.playableCharacters[7].setClue1(drowning[1]);
   this.playableCharacters[7].setClue2(drowning[2]);
@@ -367,7 +367,7 @@ for(let i = 0; i < drowning.champagneBottle; i++){
 }
 
 let powerDrill = ['power drill', 'Nail-sized hole in the side of victim’s head', 'Drill bits scattered on the floor', 'An extension cord is splattered with blood nearby'];
-for(let i = 0; i < powerDrill.champagneBottle; i++){
+for (let i = 0; i < powerDrill.champagneBottle; i++) {
   this.playableCharacters[8].setDefaultWeapon(powerDrill[0]);
   this.playableCharacters[8].setClue1(powerDrill[1]);
   this.playableCharacters[8].setClue2(powerDrill[2]);
@@ -375,91 +375,90 @@ for(let i = 0; i < powerDrill.champagneBottle; i++){
 }
 
 let vape = ['vape', 'hands are burned', 'small smoking device next to victim', 'pocket seems to have been burned'];
-for(let i = 0; i < vape.champagneBottle; i++){
+for (let i = 0; i < vape.champagneBottle; i++) {
   this.playableCharacters[9].setDefaultWeapon(vape[0]);
   this.playableCharacters[9].setClue1(vape[1]);
   this.playableCharacters[9].setClue2(vape[2]);
   this.playableCharacters[9].setClue2(vape[3]);
 }
-};
 
 
- // let inkpen  = ['inkpen', 'hole in eye socket', 'hole in neck', 'blood coming from chest'];
- // for(let i = 0; i < inkpen.length; i++){
- //   this.playableCharacters[0].setDefaultWeapon(inkpen[0]);
- //   this.playableCharacters[0].setClue1(inkpen[1]);
- //   this.playableCharacters[0].setClue2(inkpen[2]);
- //   this.playableCharacters[0].setClue2(inkpen[3]);
- // }
+// let inkpen  = ['inkpen', 'hole in eye socket', 'hole in neck', 'blood coming from chest'];
+// for(let i = 0; i < inkpen.length; i++){
+//   this.playableCharacters[0].setDefaultWeapon(inkpen[0]);
+//   this.playableCharacters[0].setClue1(inkpen[1]);
+//   this.playableCharacters[0].setClue2(inkpen[2]);
+//   this.playableCharacters[0].setClue2(inkpen[3]);
+// }
 
- // let arsenic = ['Arsenic', 'foaming at the mouth', 'vomit near vivtim','blood coming from nose'];
- // for(let i = 0; i < arsenic.length; i++){
- //   this.playableCharacters[1].setDefaultWeapon(arsenic[0]);
- //   this.playableCharacters[1].setClue1(arsenic[1]);
- //   this.playableCharacters[1].setClue2(arsenic[2]);
- //   this.playableCharacters[1].setClue2(arsenic[3]);
- // }
+// let arsenic = ['Arsenic', 'foaming at the mouth', 'vomit near vivtim','blood coming from nose'];
+// for(let i = 0; i < arsenic.length; i++){
+//   this.playableCharacters[1].setDefaultWeapon(arsenic[0]);
+//   this.playableCharacters[1].setClue1(arsenic[1]);
+//   this.playableCharacters[1].setClue2(arsenic[2]);
+//   this.playableCharacters[1].setClue2(arsenic[3]);
+// }
 
- // let candleHolder = ['candleholder', 'largebruise on forehead', 'large indentation on head', 'candle laying next to victim'];
- // for(let i = 0; i < candleHolder.length; i++){
- //   this.playableCharacters[2].setDefaultWeapon(candleHolder[0]);
- //   this.playableCharacters[2].setClue1(candleHolder[1]);
- //   this.playableCharacters[2].setClue2(candleHolder[2]);
- //   this.playableCharacters[2].setClue2(candleHolder[3]);
- // }
+// let candleHolder = ['candleholder', 'largebruise on forehead', 'large indentation on head', 'candle laying next to victim'];
+// for(let i = 0; i < candleHolder.length; i++){
+//   this.playableCharacters[2].setDefaultWeapon(candleHolder[0]);
+//   this.playableCharacters[2].setClue1(candleHolder[1]);
+//   this.playableCharacters[2].setClue2(candleHolder[2]);
+//   this.playableCharacters[2].setClue2(candleHolder[3]);
+// }
 
- // let snakeBite = ['snake bite', '2 small holes in hand', 'bluish tint to lower arm', 'swelling of the hand'];
- // for(let i = 0; i < snakeBite.length; i++){
- //   this.playableCharacters[3].setDefaultWeapon(snakeBite[0]);
- //   this.playableCharacters[3].setClue1(snakeBite[1]);
- //   this.playableCharacters[3].setClue2(snakeBite[2]);
- //   this.playableCharacters[3].setClue2(snakeBite[3]);
- // }
+// let snakeBite = ['snake bite', '2 small holes in hand', 'bluish tint to lower arm', 'swelling of the hand'];
+// for(let i = 0; i < snakeBite.length; i++){
+//   this.playableCharacters[3].setDefaultWeapon(snakeBite[0]);
+//   this.playableCharacters[3].setClue1(snakeBite[1]);
+//   this.playableCharacters[3].setClue2(snakeBite[2]);
+//   this.playableCharacters[3].setClue2(snakeBite[3]);
+// }
 
- // let carbonMonoxide = ['carbon monoxide', 'complained of being dizzy', 'complained of having a headache', 'did not speak coherently'];
- // for(let i = 0; i < candleHolder.length; i++){
- //   this.playableCharacters[4].setDefaultWeapon(carbonMonoxide[0]);
- //   this.playableCharacters[4].setClue1(carbonMonoxide[1]);
- //   this.playableCharacters[4].setClue2(carbonMonoxide[2]);
- //   this.playableCharacters[4].setClue2(carbonMonoxide[3]);
- // }
+// let carbonMonoxide = ['carbon monoxide', 'complained of being dizzy', 'complained of having a headache', 'did not speak coherently'];
+// for(let i = 0; i < candleHolder.length; i++){
+//   this.playableCharacters[4].setDefaultWeapon(carbonMonoxide[0]);
+//   this.playableCharacters[4].setClue1(carbonMonoxide[1]);
+//   this.playableCharacters[4].setClue2(carbonMonoxide[2]);
+//   this.playableCharacters[4].setClue2(carbonMonoxide[3]);
+// }
 
- // let yoyo = ['yoyo', 'red marks on the neck', 'burst blood vessels around the eyes', 'purple bruises on the neck'];
- // for(let i = 0; i < yoyo.length; i++){
- //   this.playableCharacters[5].setDefaultWeapon(yoyo[0]);
- //   this.playableCharacters[5].setClue1(yoyo[1]);
- //   this.playableCharacters[5].setClue2(yoyo[2]);
- //   this.playableCharacters[5].setClue2(yoyo[3]);
- // }
+// let yoyo = ['yoyo', 'red marks on the neck', 'burst blood vessels around the eyes', 'purple bruises on the neck'];
+// for(let i = 0; i < yoyo.length; i++){
+//   this.playableCharacters[5].setDefaultWeapon(yoyo[0]);
+//   this.playableCharacters[5].setClue1(yoyo[1]);
+//   this.playableCharacters[5].setClue2(yoyo[2]);
+//   this.playableCharacters[5].setClue2(yoyo[3]);
+// }
 
- // let champagneBottle = ['champagne bottle', 'broken glass around', 'shards of glass around head', 'blood splatter on the ceiling'];
- // for(let i = 0; i < yoyo.champagneBottle; i++){
- //   this.playableCharacters[6].setDefaultWeapon(champagneBottle[0]);
- //   this.playableCharacters[6].setClue1(champagneBottle[1]);
- //   this.playableCharacters[6].setClue2(champagneBottle[2]);
- //   this.playableCharacters[6].setClue2(champagneBottle[3]);
- // }
+// let champagneBottle = ['champagne bottle', 'broken glass around', 'shards of glass around head', 'blood splatter on the ceiling'];
+// for(let i = 0; i < yoyo.champagneBottle; i++){
+//   this.playableCharacters[6].setDefaultWeapon(champagneBottle[0]);
+//   this.playableCharacters[6].setClue1(champagneBottle[1]);
+//   this.playableCharacters[6].setClue2(champagneBottle[2]);
+//   this.playableCharacters[6].setClue2(champagneBottle[3]);
+// }
 
- // let drowning = ['drowining', 'the hair is wet', 'the stomach looks bloated full of water', 'the body is laying un-naturaly'];
- // for(let i = 0; i < drowning.champagneBottle; i++){
- //   this.playableCharacters[7].setDefaultWeapon(drowning[0]);
- //   this.playableCharacters[7].setClue1(drowning[1]);
- //   this.playableCharacters[7].setClue2(drowning[2]);
- //   this.playableCharacters[7].setClue2(drowning[3]);
- // }
+// let drowning = ['drowining', 'the hair is wet', 'the stomach looks bloated full of water', 'the body is laying un-naturaly'];
+// for(let i = 0; i < drowning.champagneBottle; i++){
+//   this.playableCharacters[7].setDefaultWeapon(drowning[0]);
+//   this.playableCharacters[7].setClue1(drowning[1]);
+//   this.playableCharacters[7].setClue2(drowning[2]);
+//   this.playableCharacters[7].setClue2(drowning[3]);
+// }
 
- // let powerDrill = ['power drill', 'Nail-sized hole in the side of victim’s head', 'Drill bits scattered on the floor', 'An extension cord is splattered with blood nearby'];
- // for(let i = 0; i < powerDrill.champagneBottle; i++){
- //   this.playableCharacters[8].setDefaultWeapon(powerDrill[0]);
- //   this.playableCharacters[8].setClue1(powerDrill[1]);
- //   this.playableCharacters[8].setClue2(powerDrill[2]);
- //   this.playableCharacters[8].setClue2(powerDrill[3]);
- // }
+// let powerDrill = ['power drill', 'Nail-sized hole in the side of victim’s head', 'Drill bits scattered on the floor', 'An extension cord is splattered with blood nearby'];
+// for(let i = 0; i < powerDrill.champagneBottle; i++){
+//   this.playableCharacters[8].setDefaultWeapon(powerDrill[0]);
+//   this.playableCharacters[8].setClue1(powerDrill[1]);
+//   this.playableCharacters[8].setClue2(powerDrill[2]);
+//   this.playableCharacters[8].setClue2(powerDrill[3]);
+// }
 
- // let vape = ['vape', 'hands are burned', 'small smoking device next to victim', 'pocket seems to have been burned'];
- // for(let i = 0; i < vape.champagneBottle; i++){
- //   this.playableCharacters[9].setDefaultWeapon(vape[0]);
- //   this.playableCharacters[9].setClue1(vape[1]);
- //   this.playableCharacters[9].setClue2(vape[2]);
- //   this.playableCharacters[9].setClue2(vape[3]);
- // }
+// let vape = ['vape', 'hands are burned', 'small smoking device next to victim', 'pocket seems to have been burned'];
+// for(let i = 0; i < vape.champagneBottle; i++){
+//   this.playableCharacters[9].setDefaultWeapon(vape[0]);
+//   this.playableCharacters[9].setClue1(vape[1]);
+//   this.playableCharacters[9].setClue2(vape[2]);
+//   this.playableCharacters[9].setClue2(vape[3]);
+// }

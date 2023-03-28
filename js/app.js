@@ -1,19 +1,19 @@
 'use srict';
 
 //Constructor function for all Characters
-function Character(name, age, fileLocation, defaultWeapon) {
+function Character(name, age, fileLocation) {
 
   this.name = name;
   this.age = age;
-  this.pronoun = "he";
   this.fileLocation = fileLocation;
-  this.defaultWeapon = defaultWeapon;
+  this.defaultWeapon;
   this.id = this.name + this.age;
   //TODO: GETTER AND SETTER BELOW
-  this.howDied = `${this.name} has been found dead, wounds look like they got hit with ${this.defaultWeapon} blah blah blah`;
-  this.clue1 = 
-  this.clue2 = 
-  this.clue3 = 
+  this.howDied = `${this.name} has been found dead, wounds look like they got hit with ${this.defaultWeapon} please investigate`;
+  this.clue1;
+  this.clue2;
+  this.clue3;
+
   this.isKiller = false;
   this.timesUsed = 0;// need to use this somewhere
 
@@ -22,7 +22,7 @@ function Character(name, age, fileLocation, defaultWeapon) {
   this.goodAlibi = '';
 
   this.roomLocation = 0;
-  
+
 }
 
 
@@ -50,6 +50,21 @@ Character.prototype.getGoodAlibi = function () {
   return this.goodAlibi;
 };
 
+Character.prototype.getHowDied = function(){
+  return this.howDied;
+};
+
+Character.prototype.getClue1 = function(){
+  return this.clue1;
+};
+
+Character.prototype.getClue2 = function(){
+  return this.clue2;
+};
+
+Character.prototype.getClue3 = function(){
+  return this.clue3;
+};
 
 //setters for each charachter object
 Character.prototype.setBackStory = function (someText) {
@@ -69,6 +84,26 @@ Character.prototype.setRoomLocation = function (newRoom) {
   this.roomLocation = newRoom;
 };
 
+Character.prototype.setDefaultWeapon = function(text){
+  this.defaultWeapon = (text);
+};
+
+Character.prototype.setHowDied = function(txt){
+  this.howDied = txt;
+};
+
+Character.prototype.setClue1 = function(txt){
+  this.clue1 = txt;
+};
+
+Character.prototype.setClue2 = function(txt){
+  this.clue2 = txt;
+};
+
+Character.prototype.setClue3 = function(txt){
+  this.clue3 = txt;
+};
+
 //TODO: have getter method for picture file.
 
 
@@ -80,26 +115,26 @@ Character.prototype.setRoomLocation = function (newRoom) {
 
 
 
-let gameCharacter1 = new Character('Robert Thomas',29,'assets for clue game/Robert Thomas (younger brother, 1).jpg', 'Plasma rifle');
-let gameCharacter2 = new Character('Samantha Thomas',26, 'assets for clue game/Samantha Thomas (wife, 2).jpg', 'Gravity hammer');
-let gameCharacter3 = new Character('Richard Johnson',21, 'assets for clue game/Richard Johnson (business partner, 3).jpg', 'Vibroblade');
-let gameCharacter4 = new Character('Cynthia Green', 22, 'assets for clue game/Cynthia Green (personal assistant, 4).jpg', 'Sonic disruptor');
+let gameCharacter1 = new Character('Robert Thomas',29,'assets for clue game/Robert Thomas (younger brother, 1).jpg');
+let gameCharacter2 = new Character('Samantha Thomas',26, 'assets for clue game/Samantha Thomas (wife, 2).jpg');
+let gameCharacter3 = new Character('Richard Johnson',21, 'assets for clue game/Richard Johnson (business partner, 3).jpg');
+let gameCharacter4 = new Character('Cynthia Green', 22, 'assets for clue game/Cynthia Green (personal assistant, 4).jpg');
 let gameCharacter5 = new Character('Eric Davis', 25, 'assets for clue game/Eric Davis (bodyguard, 5).jpg', 'Railgun');
-let gameCharacter6 = new Character('Caroline Rogers',28, 'assets for clue game/Caroline Rogers, (Victim\'s ex-girlfriend, 6).jpg','Acid launcher');
-let gameCharacter7 = new Character('William Jones',43, 'assets for clue game/William Jones (accountant, 7).jpg', 'Flamethrower');
-let gameCharacter8 = new Character('Rebecca Taylor',45, 'assets for clue game/Rebecca Taylor (secretary, 8).jpg', 'Neural disruptor');
-let gameCharacter9 = new Character('Anthony Brown',13, 'assets for clue game/Anthony Brown (Competitor, 9).jpg', 'Singularity cannon');
-let gameCharacter10 = new Character('Lisa Williams',23, 'assets for clue game/Lisa Williams (neighbor, 10).jpg', 'Poison dart gun');
-let gameCharacter11 = new Character('Timothy Baker',41, 'assets for clue game/Timothy Baker (chauffeur, 11).jpg', 'Energy sword');
-let gameCharacter12 = new Character('Maria Rodriguez',37, 'assets for clue game/Maria Rodriguez (housekeeper, 12).jpg', 'Arc caster');
-let gameCharacter13 = new Character('Lawrence Campbell', 41, 'assets for clue game/Lawrence Campbell (former employee, 13).jpg', 'Freeze ray');
-let gameCharacter14 = new Character('Jessica Parker',42, 'assets for clue game/Jessica Parker (former lover, 14).jpg', 'Smart grenade launcher');
-let gameCharacter15 = new Character('Patrick Nelson', 69, 'assets for clue game/Patrick Nelson (lawyer, 15).jpg', 'EMP rifle');
-let gameCharacter16 = new Character('Michael Wright', 38, 'assets for clue game/Michael Wright (stockbroker, 16).jpg', 'Quantum destabilizer');
-let gameCharacter17 = new Character('Rachel Scott',26, 'assets for clue game/Rachel Scott (journalist-friend, 17).jpg', 'Tesla coil whip');
-let gameCharacter18 = new Character('Samuel Young',12, 'assets for clue game/Samuel Young (rival, 18).jpg', 'Nano swarm grenades');
-let gameCharacter19 = new Character('Emily Collins',15, 'assets for clue game/Emily Collins (doctor, 19).jpg', 'Dark matter cannon');
-let gameCharacter20 = new Character('Jacob Martinez', 27,'assets for clue game/Jacob Martinez (security guard, 20).jpg ', 'Graviton pulse rifle');
+let gameCharacter6 = new Character('Caroline Rogers',28, 'assets for clue game/Caroline Rogers, (Victim\'s ex-girlfriend, 6).jpg');
+let gameCharacter7 = new Character('William Jones',43, 'assets for clue game/William Jones (accountant, 7).jpg');
+let gameCharacter8 = new Character('Rebecca Taylor',45, 'assets for clue game/Rebecca Taylor (secretary, 8).jpg');
+let gameCharacter9 = new Character('Anthony Brown',13, 'assets for clue game/Anthony Brown (Competitor, 9).jpg');
+let gameCharacter10 = new Character('Lisa Williams',23, 'assets for clue game/Lisa Williams (neighbor, 10).jpg');
+let gameCharacter11 = new Character('Timothy Baker',41, 'assets for clue game/Timothy Baker (chauffeur, 11).jpg');
+let gameCharacter12 = new Character('Maria Rodriguez',37, 'assets for clue game/Maria Rodriguez (housekeeper, 12).jpg');
+let gameCharacter13 = new Character('Lawrence Campbell', 41, 'assets for clue game/Lawrence Campbell (former employee, 13).jpg');
+let gameCharacter14 = new Character('Jessica Parker',42, 'assets for clue game/Jessica Parker (former lover, 14).jpg');
+let gameCharacter15 = new Character('Patrick Nelson', 69, 'assets for clue game/Patrick Nelson (lawyer, 15).jpg');
+let gameCharacter16 = new Character('Michael Wright', 38, 'assets for clue game/Michael Wright (stockbroker, 16).jpg');
+let gameCharacter17 = new Character('Rachel Scott',26, 'assets for clue game/Rachel Scott (journalist-friend, 17).jpg');
+let gameCharacter18 = new Character('Samuel Young',12, 'assets for clue game/Samuel Young (rival, 18).jpg');
+let gameCharacter19 = new Character('Emily Collins',15, 'assets for clue game/Emily Collins (doctor, 19).jpg');
+let gameCharacter20 = new Character('Jacob Martinez', 27,'assets for clue game/Jacob Martinez (security guard, 20).jpg ');
 
 gameCharacter1.setBadAlibi('Robert claimed to have been at home at the time of the murder, but there was no one who could verify his alibi.');
 gameCharacter1.setGoodAliby('Robert claimed to have been at a business meeting at the time of the murder, and several colleagues confirmed his alibi.');
@@ -272,12 +307,37 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function(guessedCharacter
 
 };
 
+GamePlayCharacters.prototype.assignInfo = function(){
+  let inkpen  = ['inkpen', 'hole in eye socket', 'hole in neck', 'blood coming from chest'];
+  for(let i = 0; i < inkpen.length; i++){
+    this.playableCharacters[0].setDefaultWeapon(inkpen[0]);
+    this.playableCharacters[0].setClue1(inkpen[1]);
+    this.playableCharacters[0].setClue2(inkpen[2]);
+    this.playableCharacters[0].setClue2(inkpen[3]);
+  }
+};
 
-//global functions for game
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//global function for game
 function startTheGame(GamePlayCharacters) {
   GamePlayCharacters.selectGameplayCharacters();
   GamePlayCharacters.resetGame();
   GamePlayCharacters.assignRooms();
+  GamePlayCharacters.assignInfo();
   GamePlayCharacters.generateKiller();
 }
 

@@ -170,16 +170,38 @@ ourTotalPlayers.addBadAlibi();
 console.log(ourTotalPlayers);
 
 
-//Constructor for the GamePlay Characters during game session
+//||||||||||||Constructor for the GamePlay Characters during game session ||||||||||||||||||||||||||||||
 function GamePlayCharacters(arrayOfCharacters) {
   this.charachtersInPlay = arrayOfCharacters;
   this.winGame; //to be used with boolean true false TODO: make method to win the game
   //Todo: implement counter for number of guesses total and number of guesses limit?
   this.guessedKiller = 0;
   this.guessLimit = 10; //setting to 10 for now
+  this.playableCharacters;
 
 }
 
+GamePlayCharacters.prototype.selectGameplayCharacters = function(){
+  let tempCharacters = [];
+  let countToBePushed = 10;
+  let generatedNumbers = [];
+
+  do{
+    let randomNumber = Math.floor(Math.random() * this.charachtersInPlay.collectionOfCharacters.length);
+
+    if(generatedNumbers.includes(randomNumber)){
+      console.log(`this number ${randomNumber} is already used`);
+    }else{
+      tempCharacters.push(this.charachtersInPlay.collectionOfCharacters[randomNumber]);
+      countToBePushed--;
+    }
+    generatedNumbers.push(randomNumber);
+
+  }while(countToBePushed > 0);
+
+  this.playableCharacters = tempCharacters;
+
+};
 
 
 
@@ -193,20 +215,20 @@ GamePlayCharacters.prototype.removeCharacter = function (Character) {
 
 GamePlayCharacters.prototype.generateKiller = function () {
   let randomKiller = Math.floor(Math.random() * this.charachtersInPlay.collectionOfCharacters.length);
-  this.charachtersInPlay.collectionOfCharacters[randomKiller].setIsKiller(true);
+  this.playableCharacters[randomKiller].setIsKiller(true);
   //reference collectionsOfCharacters because that is the name of the attribute given in the Characters collection object
   //characters in play comes from GamePlay characters object
 };
 
 GamePlayCharacters.prototype.resetGame = function () {
-  for (let i = 0; i < this.charachtersInPlay.collectionOfCharacters.length; i++) {
-    this.charachtersInPlay.collectionOfCharacters[i].setIsKiller(false);
+  for (let i = 0; i < this.charachtersInPlay.length; i++) {
+    this.playableCharacters[i].setIsKiller(false);
   }
 };
 
 //assign rooms for characters in Collection Of Characters array
 GamePlayCharacters.prototype.assignRooms = function () {
-  let rooms = [1, 2,1,2];
+  let rooms = [1,1,1,1,1,2,2,2,2,2];
 
   //shuffle array for rooms
   for (let i = rooms.length - 1; i > 0; i--) {
@@ -216,12 +238,12 @@ GamePlayCharacters.prototype.assignRooms = function () {
     rooms[i] = rooms[j];
     rooms[j] = temp;
 
-    console.log(`this is J: ${j} and this is temp: ${temp} the value of i is: ${i} rooms.length is eqaul to ${rooms.length - 1}`);
+    //console.log(`this is J: ${j} and this is temp: ${temp} the value of i is: ${i} rooms.length is eqaul to ${rooms.length - 1}`);
   }
 
-  for (let i = 0; i < this.charachtersInPlay.collectionOfCharacters.length; i++) {
+  for (let i = 0; i < this.playableCharacters.length; i++) {
     let roomAssignment = rooms[i];
-    this.charachtersInPlay.collectionOfCharacters[i].setRoomLocation(roomAssignment);
+    this.playableCharacters[i].setRoomLocation(roomAssignment);
   }
 };
 
@@ -247,6 +269,7 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function(guessedCharacter
 
 //global functions for game
 function startTheGame(GamePlayCharacters) {
+  GamePlayCharacters.selectGameplayCharacters();
   GamePlayCharacters.resetGame();
   GamePlayCharacters.assignRooms();
   GamePlayCharacters.generateKiller();

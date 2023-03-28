@@ -159,7 +159,7 @@ gameCharacter16.setGoodAliby('Michael claimed to have been at home with his fami
 gameCharacter17.setGoodAliby('Rachel claimed to have been at a press conference at the time of the murder, and several colleagues confirmed her alibi.');
 gameCharacter18.setGoodAliby('Samuel claimed to have been at home with his family at the time of the murder, and his family members confirmed his alibi.');
 gameCharacter19.setGoodAliby('Emily claimed to have been at the hospital at the time of the murder, and hospital records confirmed her story.');
-gameCharacter20.setGoodAliby(' Jacob claimed to have been on duty guarding Alexander’s office at the time of the murder, and several colleagues confirmed his alibi.');
+gameCharacter20.setGoodAliby('Jacob claimed to have been on duty guarding Alexander’s office at the time of the murder, and several colleagues confirmed his alibi.');
 
 //charachter collection constructor this will hold all characters for the game
 function CharacterCollection() {
@@ -260,7 +260,6 @@ GamePlayCharacters.prototype.generateKiller = function () {
 };
   //reference collectionsOfCharacters because that is the name of the attribute given in the Characters collection object
   //characters in play comes from GamePlay characters object
-
 
 GamePlayCharacters.prototype.resetGame = function () {
   for (let i = 0; i < this.charachtersInPlay.length; i++) {

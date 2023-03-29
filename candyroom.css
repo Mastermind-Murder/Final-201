@@ -60,7 +60,7 @@ body section {
 }
 
 a {
-  color: rgb(255, 255, 255);
+  color: black;
   font-weight: 900;
   text-decoration: none;
 }
@@ -150,6 +150,7 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 23px;
+  font-size: 32px;
   text-align: center;
   transform: rotateY(180deg);
   background-color: bisque;
@@ -162,6 +163,8 @@ footer {
 
 .card p {
   padding: 5px;
+  width: 250px;
+  height: 375px;
 }
 
 .card.flip .card-front {

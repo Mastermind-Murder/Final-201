@@ -27,7 +27,7 @@ function renderRoomData() {
 
 
   for (let i = 0; i < candyHorrorRoom.peopleInRoom.length; i++) {
-    if(candyHorrorRoom.peopleInRoom[i].roomLocation === 2){
+    if(candyHorrorRoom.peopleInRoom[i].roomLocation === 1){
 
       let mainDiv = document.createElement('div');
       mainDiv.className = ('card ' + i);

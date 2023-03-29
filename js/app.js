@@ -326,7 +326,7 @@ GamePlayCharacters.prototype.load = function () {
 
 GamePlayCharacters.prototype.assignInfo = function () {
 
-  let backStory = `${this.playableCharacters[0].name} :The victim's business partner who was in severe debt and stood to gain financially from the victim's death`;
+  let backStory = `${this.playableCharacters[0].name} : The victim's business partner who was in severe debt and stood to gain financially from the victim's death`;
   this.playableCharacters[0].backStory = backStory;
 
   let clue1A = `${this.playableCharacters[0].name} : Was attending a business conference in another city at the time of the murder. Their attendance was confirmed by several colleagues and has a receipt for the hotel stay.`;
@@ -341,7 +341,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4A = `${this.playableCharacters[0].name} : Was at a bar near the crime scene, but no one there remembers seeing them.`;
   this.playableCharacters[0].clue4 = clue4A;
 
-  let backStory2 = `${this.playableCharacters[1].name} The victim's ex-friend who had a history of stalking him and was angry over their recent fallout.`;
+  let backStory2 = `${this.playableCharacters[1].name} : The victim's ex-friend who had a history of stalking him and was angry over their recent fallout.`;
   this.playableCharacters[1].backStory = backStory2;
 
   let clue1B = `${this.playableCharacters[1].name} : was out of town visiting family at the time of the murder. Several family members can confirm their whereabouts and they also have a plane tickets and hotel receipts as proof.`;
@@ -357,7 +357,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4B = `${this.playableCharacters[1].name} : Claims to have been at home alone at the time of the murder, but there is no one to corroborate their story..`;
   this.playableCharacters[1].clue4 = clue4B;
 
-  let backStory3 = `${this.playableCharacters[2].name} A former employee who was fired by the victim and had a long-standing grudge against him.`;
+  let backStory3 = `${this.playableCharacters[2].name} : A former employee who was fired by the victim and had a long-standing grudge against him.`;
   this.playableCharacters[2].backStory = backStory3;
 
   let clue1C = `${this.playableCharacters[2].name} : was out of the country on a vacation with their family at the time of the murder. They have plane tickets and hotel receipts as proof.`;
@@ -372,7 +372,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4C = `${this.playableCharacters[2].name} : claims to have been working late at the office at the time of the murder, but there is no one to confirm the story.`;
   this.playableCharacters[2].clue4 = clue4C;
 
-  let backStory4 = `${this.playableCharacters[3].name} A jealous colleague who was passed over for a promotion that the victim received.`;
+  let backStory4 = `${this.playableCharacters[3].name} : A jealous colleague who was passed over for a promotion that the victim received.`;
   this.playableCharacters[3].backStory = backStory4;
 
   let clue1D = `${this.playableCharacters[3].name} : Was out of town on a business trip at the time of the murder. Several colleagues can confirm their whereabouts and they have receipts for the travel expenses.`;
@@ -387,7 +387,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4D = `${this.playableCharacters[3].name} : claims to have been at home watching TV at the time of the murder, but there is no one to confirm their story.`;
   this.playableCharacters[3].clue4 = clue4D;
 
-  let backStory5 = `${this.playableCharacters[4].name} A rival business partner who wanted to eliminate the victim as competition in the industry.`;
+  let backStory5 = `${this.playableCharacters[4].name} : A rival business partner who wanted to eliminate the victim as competition in the industry.`;
   this.playableCharacters[4].backStory = backStory5;
 
   let clue1E = `${this.playableCharacters[4].name} : was at a charity event at the time of the murder, and several high-profile guests can confirm their presence. They also donated a significant sum of money to the charity that evening, which was documented.`;
@@ -402,7 +402,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4E = `${this.playableCharacters[4].name} : claims to have been at a bar across town at the time of the murder, but there is no one to confirm their story.`;
   this.playableCharacters[4].clue4 = clue4E;
 
-  let backStory6 = `${this.playableCharacters[5].name} The victim's current bestfriend who had a volatile relationship with him and was known to have fits of rage.`;
+  let backStory6 = `${this.playableCharacters[5].name} : The victim's current bestfriend who had a volatile relationship with him and was known to have fits of rage.`;
   this.playableCharacters[5].backStory = backStory6;
 
   let clue1F = `${this.playableCharacters[5].name} : was at a job interview at a law firm across town at the time of the murder, and the interviewer can confirm their presence. They also have an email invitation and a thank-you note from the interview as proof.`;
@@ -417,7 +417,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4F = `${this.playableCharacters[5].name} : was seen arguing with the victim outside of a coffee shop near the crime scene on the day of the murder. They claim it was just a friendly disagreement, but witnesses saw them shouting and shoving each other.`;
   this.playableCharacters[5].clue4 = clue4F;
 
-  let backStory7 = `${this.playableCharacters[6].name} The victim's neighbor who had a long-standing feud over a property dispute.`;
+  let backStory7 = `${this.playableCharacters[6].name} : The victim's neighbor who had a long-standing feud over a property dispute.`;
   this.playableCharacters[6].backStory = backStory7;
 
   let clue1G = `${this.playableCharacters[6].name} : They were at a friend's house for a game night at the time of the murder, and several people can confirm their presence. They also have photos and social media posts from the night as proof.`;
@@ -432,7 +432,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4G = `${this.playableCharacters[6].name} : They claim to have been at home alone at the time of the murder, but there is no one to corroborate their story.`;
   this.playableCharacters[6].clue4 = clue4G;
 
-  let backStory8 = `${this.playableCharacters[7].name} The victim's sibling who was struggling financially and stood to inherit a large sum of money from the victim's estate.`;
+  let backStory8 = `${this.playableCharacters[7].name} : The victim's sibling who was struggling financially and stood to inherit a large sum of money from the victim's estate.`;
   this.playableCharacters[7].backStory = backStory8;
 
   let clue1H = `${this.playableCharacters[7].name} : was out of town visiting parents at the time of the murder, and several family members can confirm their presence. They also has plane tickets and hotel receipts as proof.`;
@@ -447,7 +447,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4H = `${this.playableCharacters[7].name} : claims to have been at home studying at the time of the murder, but there is no one to confirm their story.`;
   this.playableCharacters[7].clue4 = clue4H;
 
-  let backStory9 = `${this.playableCharacters[8].name} The victim's former business partner who was forced out of the company and wanted revenge.`;
+  let backStory9 = `${this.playableCharacters[8].name} : The victim's former business partner who was forced out of the company and wanted revenge.`;
   this.playableCharacters[8].backStory = backStory9;
 
   let clue1I = `${this.playableCharacters[8].name} : was at a doctor's appointment at the time of the murder, and the doctor can confirm their presence. They also has a receipt from the appointment as proof.`;
@@ -462,7 +462,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue4I = `${this.playableCharacters[8].name} : claims to have been at home sleeping at the time of the murder, but there is no one to confirm his story.`;
   this.playableCharacters[8].clue4 = clue4I;
 
-  let backStory10 = `${this.playableCharacters[9].name} The victim's personal assistant who was caught stealing money from his accounts and was threatened with exposure.`;
+  let backStory10 = `${this.playableCharacters[9].name} : The victim's personal assistant who was caught stealing money from his accounts and was threatened with exposure.`;
   this.playableCharacters[9].backStory = backStory10;
 
   let clue1J = `${this.playableCharacters[9].name} : was at a movie theater at the time of the murder, and several people who were there with them can confirm their presence. They also has a ticket stub as proof.`;
@@ -537,6 +537,82 @@ function renderCharacterCards() {
   storyTenEl.innerHTML = ourPlayersGame.playableCharacters[9].backStory;
 }
 
+function renderClues() {
+  let clueOnePTEl = document.getElementById('clue1PT');
+  let clueOneCHEl = document.getElementById('clue1CH');
+  let clueTwoPTEl = document.getElementById('clue2PT');
+  let clueTwoCHEl = document.getElementById('clue2CH');
+  let clueThreePTEl = document.getElementById('clue3PT');
+  let clueThreeCHEl = document.getElementById('clue3CH');
+  let clueFourPTEl = document.getElementById('clue4PT');
+  let clueFourCHEl = document.getElementById('clue4CH');
+
+
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue1;
+  console.log("string", ourPlayersGame.playableCharacters[0].clue1);
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue4;
+  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue1;
+  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue2;
+  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue3;
+  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue4;
+  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue1;
+  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue2;
+  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue3;
+  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue4;
+  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue1;
+  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue2;
+  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue3;
+  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue4;
+  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue1;
+  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue2;
+  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue3;
+  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue4;
+  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue1;
+  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue2;
+  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue3;
+  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue4;
+  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[4].clue1;
+
+}
+
 //global function for game
 function startTheGame(GamePlayCharacters) {
   GamePlayCharacters.selectGameplayCharacters();
@@ -545,6 +621,7 @@ function startTheGame(GamePlayCharacters) {
   GamePlayCharacters.assignInfo();
   GamePlayCharacters.generateKiller();
   renderCharacterCards();
+  renderClues();
 }
 
 startTheGame(ourPlayersGame);

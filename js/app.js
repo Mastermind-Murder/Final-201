@@ -1,5 +1,4 @@
-'use srict';
-
+'use strict';
 
 //Constructor function for all Characters
 function Character(name, age, fileLocation) {
@@ -9,7 +8,6 @@ function Character(name, age, fileLocation) {
   this.fileLocation = fileLocation;
   this.defaultWeapon;
   this.id = this.name + this.age;
-  //TODO: GETTER AND SETTER BELOW
   this.howDied = `${this.name} has been found dead, wounds look like they got hit with ${this.defaultWeapon} please investigate`;
   this.clue1;
   this.clue2;
@@ -26,8 +24,6 @@ function Character(name, age, fileLocation) {
   this.roomLocation = 0;
 
 }
-
-
 
 //function to change the status of the killer
 Character.prototype.setIsKiller = function (setKiller) {
@@ -68,7 +64,7 @@ Character.prototype.getClue3 = function () {
   return this.clue3;
 };
 
-//setters for each charachter object
+//setters for each character object
 Character.prototype.setBackStory = function (someText) {
   this.backStory = someText;
 };
@@ -106,22 +102,11 @@ Character.prototype.setClue3 = function (txt) {
   this.clue3 = txt;
 };
 
-//TODO: have getter method for picture file.
-
-
-//generating random players
-// let charachter1 = new Character('Kyle', 33, 'some text Location', 'hammer');
-// let charachter2 = new Character('Kimmy', 20, 'Other file location', 'phone');
-// let charachter3 = new Character('Kamau', 27, 'file Location', 'uber');
-
-
-
-
 let gameCharacter1 = new Character('Robert Thomas', 35, 'assets for clue game/Robert Thomas (younger brother, 1).jpg');
 let gameCharacter2 = new Character('Samantha Thomas', 38, 'assets for clue game/Samantha Thomas (wife, 2).jpg');
 let gameCharacter3 = new Character('Richard Johnson', 33, 'assets for clue game/Richard Johnson (business partner, 3).jpg');
 let gameCharacter4 = new Character('Cynthia Green', 42, 'assets for clue game/Cynthia Green (personal assistant, 4).jpg');
-let gameCharacter5 = new Character('Eric Davis', 39, 'assets for clue game/Eric Davis (bodyguard, 5).jpg', 'Railgun');
+let gameCharacter5 = new Character('Eric Davis', 39, 'assets for clue game/Eric Davis (bodyguard, 5).jpg');
 let gameCharacter6 = new Character('Caroline Rogers', 35, 'assets for clue game/Caroline Rogers, (Victim\'s ex-girlfriend, 6).jpg');
 let gameCharacter7 = new Character('William Jones', 43, 'assets for clue game/William Jones (accountant, 7).jpg');
 let gameCharacter8 = new Character('Rebecca Taylor', 45, 'assets for clue game/Rebecca Taylor (secretary, 8).jpg');
@@ -163,7 +148,7 @@ gameCharacter18.setGoodAliby('Samuel claimed to have been at home with his famil
 gameCharacter19.setGoodAliby('Emily claimed to have been at the hospital at the time of the murder, and hospital records confirmed her story.');
 gameCharacter20.setGoodAliby('Jacob claimed to have been on duty guarding Alexander’s office at the time of the murder, and several colleagues confirmed his alibi.');
 
-//charachter collection constructor this will hold all characters for the game
+//character collection constructor this will hold all characters for the game
 function CharacterCollection() {
   this.collectionOfCharacters = [];
 }
@@ -215,7 +200,7 @@ console.log(ourTotalPlayers);
 
 //||||||||||||Constructor for the GamePlay Characters during game session ||||||||||||||||||||||||||||||
 function GamePlayCharacters(arrayOfCharacters) {
-  this.charachtersInPlay = arrayOfCharacters;
+  this.charactersInPlay = arrayOfCharacters;
   this.winGame; //to be used with boolean true false TODO: make method to win the game
   //Todo: implement counter for number of guesses total and number of guesses limit?
   this.guessedKiller = 0;
@@ -230,12 +215,12 @@ GamePlayCharacters.prototype.selectGameplayCharacters = function () {
   let generatedNumbers = [];
 
   do {
-    let randomNumber = Math.floor(Math.random() * this.charachtersInPlay.collectionOfCharacters.length);
+    let randomNumber = Math.floor(Math.random() * this.charactersInPlay.collectionOfCharacters.length);
 
     if (generatedNumbers.includes(randomNumber)) {
       // console.log(`this number ${randomNumber} is already used`);
     } else {
-      tempCharacters.push(this.charachtersInPlay.collectionOfCharacters[randomNumber]);
+      tempCharacters.push(this.charactersInPlay.collectionOfCharacters[randomNumber]);
       countToBePushed--;
     }
     generatedNumbers.push(randomNumber);
@@ -249,9 +234,9 @@ GamePlayCharacters.prototype.selectGameplayCharacters = function () {
 
 
 GamePlayCharacters.prototype.removeCharacter = function (Character) {
-  for (let i = 0; i < this.charachtersInPlay.collectionOfCharacters.length; i++) {
-    if (Character.id === this.charachtersInPlay.collectionOfCharacters[i].id) {
-      this.charachtersInPlay.collectionOfCharacters.splice(i, 1);
+  for (let i = 0; i < this.charactersInPlay.collectionOfCharacters.length; i++) {
+    if (Character.id === this.charactersInPlay.collectionOfCharacters[i].id) {
+      this.charactersInPlay.collectionOfCharacters.splice(i, 1);
     }
   }
 };
@@ -264,7 +249,7 @@ GamePlayCharacters.prototype.generateKiller = function () {
 //characters in play comes from GamePlay characters object
 
 GamePlayCharacters.prototype.resetGame = function () {
-  for (let i = 0; i < this.charachtersInPlay.length; i++) {
+  for (let i = 0; i < this.charactersInPlay.length; i++) {
     this.playableCharacters[i].setIsKiller(false);
   }
 };
@@ -281,7 +266,7 @@ GamePlayCharacters.prototype.assignRooms = function () {
     rooms[i] = rooms[j];
     rooms[j] = temp;
 
-    //console.log(`this is J: ${j} and this is temp: ${temp} the value of i is: ${i} rooms.length is eqaul to ${rooms.length - 1}`);
+    //console.log(`this is J: ${j} and this is temp: ${temp} the value of i is: ${i} rooms.length is equal to ${rooms.length - 1}`);
   }
 
   for (let i = 0; i < this.playableCharacters.length; i++) {
@@ -294,7 +279,7 @@ GamePlayCharacters.prototype.assignRooms = function () {
 GamePlayCharacters.prototype.checkIfSelectedIsKiller = function (guessedCharacter) {
 
   do {
-    for (let i = 0; i < this.charachtersInPlay.collectionOfCharacters.length; i++) {
+    for (let i = 0; i < this.charactersInPlay.collectionOfCharacters.length; i++) {
       if (guessedCharacter.checkIsKiller()) {
         this.winGame = true;
         console.log('guessed the killer');
@@ -479,18 +464,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
 
 };
 
-
-
-//For --Testing Below --
-
 let ourPlayersGame = new GamePlayCharacters(ourTotalPlayers);
-// ourPlayersGame.resetGame();
-// ourPlayersGame.assignRooms();
-console.log(ourPlayersGame);
-// ourPlayersGame.generateKiller();
-// console.log(ourPlayersGame);
-//ourPlayersGame.removeCharacter(charachter1);
-// console.log(ourPlayersGame);
 startTheGame(ourPlayersGame);
 
 function renderCharacterCards() {
@@ -537,81 +511,80 @@ function renderCharacterCards() {
   storyTenEl.innerHTML = ourPlayersGame.playableCharacters[9].backStory;
 }
 
-function renderClues() {
-  let clueOnePTEl = document.getElementById('clue1PT');
-  let clueOneCHEl = document.getElementById('clue1CH');
-  let clueTwoPTEl = document.getElementById('clue2PT');
-  let clueTwoCHEl = document.getElementById('clue2CH');
-  let clueThreePTEl = document.getElementById('clue3PT');
-  let clueThreeCHEl = document.getElementById('clue3CH');
-  let clueFourPTEl = document.getElementById('clue4PT');
-  let clueFourCHEl = document.getElementById('clue4CH');
+// function renderClues() {
+//   let clueOnePTEl = document.getElementById('clue1PT');
+//   let clueOneCHEl = document.getElementById('clue1CH');
+//   let clueTwoPTEl = document.getElementById('clue2PT');
+//   let clueTwoCHEl = document.getElementById('clue2CH');
+//   let clueThreePTEl = document.getElementById('clue3PT');
+//   let clueThreeCHEl = document.getElementById('clue3CH');
+//   let clueFourPTEl = document.getElementById('clue4PT');
+//   let clueFourCHEl = document.getElementById('clue4CH');
 
 
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue1;
-  console.log("string", ourPlayersGame.playableCharacters[0].clue1);
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue1;
-  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue2;
-  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue3;
-  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue1;
-  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue2;
-  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue3;
-  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue1;
-  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue2;
-  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue3;
-  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue1;
-  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue2;
-  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue3;
-  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[4].clue1;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[0].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[1].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[2].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[3].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[4].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[5].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[6].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[7].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[8].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue4;
+//   clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue1;
+//   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue2;
+//   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue3;
+//   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue4;
+//   clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue1;
+//   clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue2;
+//   clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue3;
+//   clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue4;
+//   clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue1;
+//   clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue2;
+//   clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue3;
+//   clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue4;
+//   clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue1;
+//   clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue2;
+//   clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue3;
+//   clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue4;
+//   clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue1;
+//   clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue2;
+//   clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue3;
+//   clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue4;
+//   clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[4].clue1;
 
-}
+// }
 
 //global function for game
 function startTheGame(GamePlayCharacters) {
@@ -621,7 +594,7 @@ function startTheGame(GamePlayCharacters) {
   GamePlayCharacters.assignInfo();
   GamePlayCharacters.generateKiller();
   renderCharacterCards();
-  renderClues();
+  // renderClues();
 }
 
 startTheGame(ourPlayersGame);

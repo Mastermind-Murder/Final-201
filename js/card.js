@@ -8,6 +8,6 @@ cards.forEach(card => {
   });
 });
 
-let ourGame = new GamePlayCharacters();
-ourGame.load();
-console.log(ourGame);
+// let ourGame = new GamePlayCharacters();
+// ourGame.load();
+// console.log(ourGame);

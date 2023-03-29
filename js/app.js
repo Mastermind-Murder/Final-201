@@ -210,7 +210,7 @@ ourTotalPlayers.addCharacter(gameCharacter19);
 ourTotalPlayers.addCharacter(gameCharacter20);
 
 ourTotalPlayers.addBadAlibi();
-console.log(ourTotalPlayers);
+//console.log(ourTotalPlayers);
 
 
 //||||||||||||Constructor for the GamePlay Characters during game session ||||||||||||||||||||||||||||||
@@ -311,16 +311,21 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function (guessedCharacte
 
 GamePlayCharacters.prototype.save = function () {
   let stringifyValues = JSON.stringify(this.playableCharacters);
+
   localStorage.setItem('character',stringifyValues);
+  //console.log(stringifyValues);
+  localStorage.setItem('characters', stringifyValues);
 };
 
 GamePlayCharacters.prototype.load = function () {
   let valuesFromStorage = JSON.parse(localStorage.getItem('characters'));
-  if (valuesFromStorage) {
-    valuesFromStorage.forEach(character => {
-      this.playableCharacters.push(new Character(character.name, character.age, character.fileLocation));
-    });
-  }
+  console.log(valuesFromStorage);
+  console.log("ABOVE ARE LOADED VALUES");
+  // if (valuesFromStorage) {
+  //   valuesFromStorage.forEach(character => {
+  //     this.playableCharacters.push(new Character(character.name, character.age, character.fileLocation));
+  //   });
+  // }
 };
 
 
@@ -625,3 +630,5 @@ startTheGame(ourPlayersGame);
 
 console.log(ourPlayersGame);
 ourPlayersGame.save();
+// ourPlayersGame.load();
+console.log(localStorage);

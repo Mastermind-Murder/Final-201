@@ -60,7 +60,7 @@ body section {
 }
 
 a {
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: 900;
   text-decoration: none;
 }
@@ -149,15 +149,19 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
+  font-size: 25px;
   text-align: center;
   transform: rotateY(180deg);
   background-color: bisque;
   color: red;
   font-family: 'Delicious Handrawn', cursive;
   position: absolute;
-  width: 250px;
-  height: 375px;
+  width: 275px;
+  height: 425px;
+}
+
+.card p {
+  padding: 5px;
 }
 
 .card.flip .card-front {

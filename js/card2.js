@@ -1,10 +1,10 @@
 //This flips the cards
 
-const cards = document.querySelectorAll('.card');
+const cards1 = document.querySelectorAll('.card');
 
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('flip');
+cards1.forEach(card => {
+  card.addEventListener('click', function() {
+    this.classList.toggle('flip'); // This toggles the 'flip' class to flip the card
   });
 });
 

@@ -1,12 +1,5 @@
 //This flips the cards
 
-// const cards = document.querySelectorAll('.card');
-
-// cards.forEach(card => {
-//   card.addEventListener('click', () => {
-//     card.classList.toggle('flip');
-//   });
-// });
 const cards1 = document.querySelectorAll('.card');
 
 cards1.forEach(card => {
@@ -34,7 +27,7 @@ function renderRoomData() {
 
 
   for (let i = 0; i < candyHorrorRoom.peopleInRoom.length; i++) {
-    if(candyHorrorRoom.peopleInRoom[i].roomLocation === 2){
+    if(candyHorrorRoom.peopleInRoom[i].roomLocation === 1){
 
       let mainDiv = document.createElement('div');
       mainDiv.className = ('card ' + i);
@@ -85,3 +78,12 @@ function renderRoomData() {
 renderRoomData();
 console.log(candyHorrorRoom);
 
+function quiz() {
+  let enterance = prompt('Welcome to the Candy Horror Room, Are you ready to solve the mystery?').toLowerCase();
+  if ( enterance === 'yes') {
+    alert('Welcome to the room of delicious horror!');
+  } else {
+    alert('We do not blame you for being scared to enter!');
+  }
+}
+quiz();

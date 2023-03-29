@@ -28,6 +28,8 @@ input[type=submit]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: thin solid purple;
+    border-radius: 4px;
 }
 
 nav {
@@ -90,9 +92,8 @@ body section {
 .headshots {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    justify-content: space-around;
+ 
 }
 
 /* .headshots img {
@@ -119,9 +120,25 @@ body section {
 .container {
     width: 500px;
     margin: 0 auto;
+    border: thin solid blue
 }
 
 .thanks {
     text-align: center;
     font-size: 30px;
+}
+
+.headshot {
+    justify-content: space-around;
+    padding-right: 28px;
+    border: thin solid red;
+}
+
+.contactus {
+    border: thin solid lime;
+}
+
+#moreinfo {
+    font-size: 15px;
+    text-align: center;
 }

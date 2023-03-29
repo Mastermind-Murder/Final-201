@@ -76,6 +76,7 @@ body section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;   
 }
 
 .team-header {
@@ -87,12 +88,14 @@ body section {
     font-size: 40px;
 }
 
-.headshots {
+.headshot {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin: 0px 35px 0px 35px;
+    width: 200px;
 }
 
 .pic {

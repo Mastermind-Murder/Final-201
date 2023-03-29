@@ -134,7 +134,7 @@ footer {
   width: 250px;
   height: 375px;
   perspective: 800px;
-  padding: 20px;
+  padding: 22px;
 }
 
 .card-front,
@@ -149,15 +149,15 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 23px;
   text-align: center;
   transform: rotateY(180deg);
   background-color: bisque;
   color: red;
   font-family: 'Delicious Handrawn', cursive;
   position: absolute;
-  width: 275px;
-  height: 425px;
+  width: 295px;
+  height: 375px;
 }
 
 .card p {

@@ -233,7 +233,7 @@ GamePlayCharacters.prototype.selectGameplayCharacters = function () {
     let randomNumber = Math.floor(Math.random() * this.charachtersInPlay.collectionOfCharacters.length);
 
     if (generatedNumbers.includes(randomNumber)) {
-      console.log(`this number ${randomNumber} is already used`);
+      // console.log(`this number ${randomNumber} is already used`);
     } else {
       tempCharacters.push(this.charachtersInPlay.collectionOfCharacters[randomNumber]);
       countToBePushed--;
@@ -311,7 +311,7 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function (guessedCharacte
 
 GamePlayCharacters.prototype.save = function () {
   let stringifyValues = JSON.stringify(this.playableCharacters);
-  localStorage.setItem('character',stringifyValues);
+  localStorage.setItem('character', stringifyValues);
 };
 
 GamePlayCharacters.prototype.load = function () {

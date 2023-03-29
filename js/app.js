@@ -589,27 +589,23 @@ function renderClues() {
   clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue2;
   clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue3;
   clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[9].clue4;
-  clueOnePTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue1;
-  clueTwoPTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue2;
-  clueThreePTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue3;
-  clueFourPTEl.innerHTML = ourPlayersGame.playableCharacters[10].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue1;
-  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue2;
-  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue3;
-  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue1;
-  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue2;
-  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue3;
-  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue1;
-  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue2;
-  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue3;
-  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue1;
-  clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue2;
-  clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue3;
-  clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue4;
-  clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[4].clue1;
+  // clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue1;
+  // clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue2;
+  // clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue3;
+  // clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[0].clue4;
+  // clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue1;
+  // clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue2;
+  // clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue3;
+  // clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[1].clue4;
+  // clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue1;
+  // clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue2;
+  // clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue3;
+  // clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[2].clue4;
+  // clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue1;
+  // clueTwoCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue2;
+  // clueThreeCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue3;
+  // clueFourCHEl.innerHTML = ourPlayersGame.playableCharacters[3].clue4;
+  // clueOneCHEl.innerHTML = ourPlayersGame.playableCharacters[4].clue1;
 
 }
 
@@ -620,8 +616,8 @@ function startTheGame(GamePlayCharacters) {
   GamePlayCharacters.assignRooms();
   GamePlayCharacters.assignInfo();
   GamePlayCharacters.generateKiller();
-  renderCharacterCards();
   renderClues();
+  renderCharacterCards();
 }
 
 startTheGame(ourPlayersGame);

@@ -1,121 +1,133 @@
 body {
+  position: absolute;
+  background-image: url("assets for clue game/prettythingsroom.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+  font-family: 'Creepster', cursive;
+  color: red;
+}
+
+P {
+  font-family: 'Creepster', cursive;
+}
+
+.intro {
+  background-color: bisque;
+}
+
+header nav {
+    color: grey !important;
+    font-weight: bold;
+    display: flex;
+    padding: auto;
     position: absolute;
-    background-image: url("assets for clue game/prettythingsroom.jpg");
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    height: 100vh;
+    top: -10px;
+    position: relative
   }
   
-  header {
+  nav img {
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid rgb(22, 2, 2);
+    border-color: rgb(18, 1, 1);
+    max-height: 100px;
+  }
+  
+  
+  header li {
+    display: inline;
+    line-height: 50px;
+    margin-left: 50px
+  }
+  
+  body section {
+    padding: 20px;
+    margin: auto;
+    font-size: x-large;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer {
+    background-color: transparent;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 4px;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  /* Cards */
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: auto;
+  }
+  .card {
+    position: relative;
+    width: 250px;
+    height: 375px;
+    perspective: 800px;
+    padding: 20px;
+  }
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .card-front {
+    /* background-color: #ccc; */
+  }
+  .card-back {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-  }
-  
-  h1 {
-    font-size: 100px;
-    text-align: center;
-    font-family: 'Creepster', cursive;
-    color: red;
-  }
-  
-  P {
-    font-family: 'Creepster', cursive;
-  }
-  
-  .intro {
     background-color: bisque;
+    color: red;
+    font-size: 32px;
+    text-align: center;
+    transform: rotateY(180deg);
+    font-family: 'Creepster', cursive;
+    position: absolute;
+    width: 250px;
+    height: 375px;
   }
-  
-  header nav {
-      color: grey !important;
-      font-weight: bold;
-      display: flex;
-      padding: auto;
-      position: absolute;
-      top: -10px;
-      position: relative
-    }
-    
-    nav img {
-      display: inline-block;
-      border-radius: 50%;
-      border: 2px solid rgb(22, 2, 2);
-      border-color: rgb(18, 1, 1);
-      max-height: 100px;
-    }
-    
-    
-    header li {
-      display: inline;
-      line-height: 50px;
-      margin-left: 50px
-    }
-    
-    body section {
-      padding: 20px;
-      margin: auto;
-      font-size: x-large;
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-    }
-    
-    a {
-      color: white;
-      text-decoration: none;
-    }
-    
-    footer {
-      background-color: transparent;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      padding: 4px;
-      font-size: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-    }
-  
-    /* Cards */
-  
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      height: 50vh;
-    }
-    .card {
-      position: relative;
-      width: 150px;
-      height: 200px;
-      perspective: 800px;
-      margin: 15px;
-    }
-    .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-    }
-    .card-front {
-      background-color: #ccc;
-    }
-    .card-back {
-      background-color: bisque;
-      color: red;
-      font-size: 25px;
-      text-align: center;
-      transform: rotateY(180deg);
-      font-family: 'Creepster', cursive;
-    }
-    .card.flip .card-front {
-      transform: rotateY(180deg);
-    }
-    .card.flip .card-back {
-      transform: rotateY(0deg);
-    }
-  
+  .card.flip .card-front {
+    transform: rotateY(180deg);
+  }
+  .card.flip .card-back {
+    transform: rotateY(0deg);
+  }
+
+  footer a {
+    font-family: 'Creepster', cursive;
+  }

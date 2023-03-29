@@ -114,12 +114,13 @@ header nav {
     background-color: bisque;
     color: red;
     font-size: 24px;
+    font-size: 32px;
     text-align: center;
     transform: rotateY(180deg);
     font-family: 'Creepster', cursive;
     position: absolute;
-    width: 275px;
-    height: 425px;
+    width: 250px;
+    height: 375px;
   }
   .card.flip .card-front {
     transform: rotateY(180deg);
@@ -155,10 +156,6 @@ header nav {
     transform: rotateY(180deg); /* This determines the flipped state of the card */
   }
   
-  .card p {
-    padding: 5px;
-  }
-
   .card:hover .card-front {
     transform: rotateY(180deg); /* This flips the card when it is hovered over */
   }

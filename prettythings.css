@@ -113,6 +113,7 @@ header nav {
     align-items: center;
     background-color: bisque;
     color: red;
+    font-size: 24px;
     font-size: 32px;
     text-align: center;
     transform: rotateY(180deg);

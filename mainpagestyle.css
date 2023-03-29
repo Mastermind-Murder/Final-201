@@ -158,3 +158,15 @@ transform: rotateY(180deg);
 .card.flip .card-back {
 transform: rotateY(0deg);
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-game {
+  padding: 10px 20px;
+  font-size: 24px;
+  background-color: red;
+}

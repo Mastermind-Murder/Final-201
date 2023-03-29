@@ -78,3 +78,12 @@ function renderRoomData() {
 renderRoomData();
 console.log(candyHorrorRoom);
 
+function quiz() {
+  let enterance = prompt('Welcome to the Candy Horror Room, Are you ready to solve the mystery?').toLowerCase();
+  if ( enterance === 'yes') {
+    alert('Welcome to the room of delicious horror!');
+  } else {
+    alert('We do not blame you for being scared to enter!');
+  }
+}
+quiz();

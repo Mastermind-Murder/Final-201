@@ -147,9 +147,18 @@ backface-visibility: hidden;
 background-color: #ccc;
 }
 .card-back {
-background-color: #cf7878;
-color:black;
-transform: rotateY(180deg);
+  background-color: #cf7878;
+  color:black;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  text-align: center;
+  position: absolute;
+  width: 250px;
+  height: 375px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .card.flip .card-front {
 transform: rotateY(180deg);

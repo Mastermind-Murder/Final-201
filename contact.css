@@ -97,6 +97,36 @@ body section {
     margin: 0px 35px 0px 35px;
     width: 200px;
 }
+/* 
+h4 {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+} */
+
+.headshot p {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+#Ben {
+    margin: 7px;
+}
+
+#Ben-info {
+    margin: 15px;
+}
+
+/* .headshot-Ben {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 35px 0px 35px;
+    width: 200px;
+} */
 
 .pic {
     width: 200px;
@@ -108,4 +138,16 @@ body section {
 .container {
     width: 500px;
     margin: 0 auto;
+}
+
+h4.thanks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 1200px;
+    border: thin solid red;
+    margin: auto;
+    font-size: 30px;
 }

@@ -1,12 +1,18 @@
 //This flips the cards
 
 const cards1 = document.querySelectorAll('.card');
+function someFunction(){
+  this.classList.toggle('flip');
+}
 
 cards1.forEach(card => {
-  card.addEventListener('click', function() {
-    this.classList.toggle('flip'); // This toggles the 'flip' class to flip the card
-  });
+  card.addEventListener('click', someFunction);
 });
+
+//   function() {
+//     this.classList.toggle('flip'); // This toggles the 'flip' class to flip the card
+//   });
+// });
 
 
 function CandyHorror() {
@@ -30,7 +36,7 @@ function renderRoomData() {
     if(candyHorrorRoom.peopleInRoom[i].roomLocation === 1){
 
       let mainDiv = document.createElement('div');
-      mainDiv.className = ('card ' + i);
+      mainDiv.className = ('card ');
 
       let div1 = document.createElement('div');
       div1.className = 'card-front';
@@ -95,3 +101,35 @@ function quiz() {
   }
 }
 quiz();
+
+let timeLeft = 90; // 2 minutes in seconds
+let timer = document.getElementById('timer');
+
+function startTimer() {
+
+  let countdown = setInterval(function() {
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      timer.innerHTML = 'Time\'s up!';
+      const collection1 = document.getElementsByClassName('card-front');
+      console.log(collection1);
+      for(let i=collection1.length-1; i>=0; i--){
+        console.log(collection1[i]);
+        collection1.item(i).className = 'blackout';
+      }
+      const collection2 = document.getElementsByClassName('card-back');
+      for(let i=collection2.length-1; i>=0; i--){
+        collection2.item(i).className = 'blackout';
+      }
+
+      console.log('timer ended');
+    } else {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      timer.innerHTML = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+      timeLeft--;
+    }
+  }, 1000); // run the countdown every second
+}
+
+

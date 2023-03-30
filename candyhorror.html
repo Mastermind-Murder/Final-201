@@ -14,12 +14,13 @@
     <div id="image-container"></div>
 </head>
 
-<body>
+<body  onload="startTimer()" >
+    <div id="picture">
 
-    <header>
+    <header >
         <img src="./images/candyroombanner.jpg" width="100%" height="150px">
         <h1>Candy Horror</h1>
-        <nav>
+        <nav >
             <ul>
                 <a>
                     <li class="homeHyperlink"><a href="index.html">Rules</a></li>
@@ -40,6 +41,9 @@
                 </a>
             </ul>
         </nav>
+        <button id="timer" onload="startTimer()">Start Timer</button>
+
+
     </header>
     <section class="intro">
         In a room dedicated to celebrating all things sweet and delicious. What could possibly go wrong, with amazing
@@ -59,9 +63,10 @@
                 <ul class="contactusHyperlink"><a href="contact.html"> Contact Us</a></ul>
             </a>
         </footer>
-        <audio id="jumpscareaudio" autoplay>
+        <!-- <audio id="jumpscareaudio" autoplay>
             <source src="./assets/female-halloween-horror-voice-spiteful-laughter-vol-003-142504.mp3" type="audio/mp3">
-        </audio>
-</body>
+        </audio> -->
+    </div>
+    </body>
 
 </html>

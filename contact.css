@@ -116,6 +116,7 @@ h4 {
 
 #Ben-info {
     margin: 15px;
+    padding-top: 20px;
 }
 
 /* .headshot-Ben {
@@ -147,7 +148,7 @@ h4.thanks {
     justify-content: center;
     text-align: center;
     width: 1200px;
-    border: thin solid red;
+
     margin: auto;
     font-size: 30px;
 }

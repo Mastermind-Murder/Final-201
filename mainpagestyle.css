@@ -183,6 +183,12 @@ transform: rotateY(0deg);
   padding: 10px 20px;
   font-size: 24px;
   background-color: red;
+
+}
+
+.start-game a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Jumpscare Image */

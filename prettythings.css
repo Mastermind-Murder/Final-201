@@ -1,6 +1,6 @@
 body {
   position: absolute;
-  background-image: url("assets for clue game/prettythingsroom.jpg");
+  background-image: url("./images/prettythingsroom.jpg");
   background-size: cover; 
   background-repeat: no-repeat; 
   height: 100vh;

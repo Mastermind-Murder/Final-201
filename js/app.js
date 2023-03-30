@@ -537,7 +537,7 @@ function getOption(e) {
   let obj = document.getElementById('myKiller');
   document.getElementById('demo').innerHTML =
   obj.options[obj.selectedIndex].text;
-
+//some stupid comment 
 }
 
 

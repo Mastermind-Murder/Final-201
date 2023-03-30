@@ -468,7 +468,6 @@ GamePlayCharacters.prototype.assignInfo = function () {
 };
 
 let ourPlayersGame = new GamePlayCharacters(ourTotalPlayers);
-startTheGame(ourPlayersGame);
 
 function renderCharacterCards() {
   let imageOneEl = document.getElementById('character1');

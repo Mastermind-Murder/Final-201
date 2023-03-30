@@ -1,12 +1,5 @@
-//This flips the cards
+'use strict';
 
-// const cards = document.querySelectorAll('.card');
-
-// cards.forEach(card => {
-//   card.addEventListener('click', () => {
-//     card.classList.toggle('flip');
-//   });
-// });
 const cards1 = document.querySelectorAll('.card');
 
 cards1.forEach(card => {

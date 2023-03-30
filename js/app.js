@@ -604,6 +604,11 @@ startTheGame(ourPlayersGame);
 
 function getOption(e) {
   console.log(e.target.value);
+  if(e.target.value == true){
+    alert('You arrested the right person');
+  }else {
+    alert('WRONG; congragulations you are now being sued');
+  }
   let obj = document.getElementById('myKiller');
   document.getElementById('demo').innerHTML =
   obj.options[obj.selectedIndex].text;

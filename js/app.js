@@ -6,7 +6,7 @@ function Character(name, age, fileLocation) {
   this.name = name;
   this.age = age;
   this.fileLocation = fileLocation;
-  this.defaultWeapon; //can be used for rooms 
+  this.defaultWeapon; //can be used for rooms
   this.id = this.name + this.age;
   this.howDied = `${this.name} has been found dead, wounds look like they got hit with ${this.defaultWeapon} please investigate`;
   this.clue1;
@@ -303,7 +303,7 @@ GamePlayCharacters.prototype.save = function () {
 GamePlayCharacters.prototype.load = function () {
   let valuesFromStorage = JSON.parse(localStorage.getItem('characters'));
   console.log(valuesFromStorage);
-  console.log("ABOVE ARE LOADED VALUES");
+  console.log('ABOVE ARE LOADED VALUES');
   // if (valuesFromStorage) {
   //   valuesFromStorage.forEach(character => {
   //     this.playableCharacters.push(new Character(character.name, character.age, character.fileLocation));
@@ -601,6 +601,30 @@ function startTheGame(GamePlayCharacters) {
 
 startTheGame(ourPlayersGame);
 // localStorage('game', JSON.stringify(ourPlayersGame));
+
+function getOption(e) {
+  console.log(e.target.value);
+  let obj = document.getElementById('myKiller');
+  document.getElementById('demo').innerHTML =
+  obj.options[obj.selectedIndex].text;
+
+}
+
+
+for(let i = 0; i<ourPlayersGame.playableCharacters.length; i++){
+  let selected = document.getElementById('myKiller');
+  let optionTag = document.createElement('option');
+  optionTag.innerHTML = ourPlayersGame.playableCharacters[i].name;
+  optionTag.value = ourPlayersGame.playableCharacters[i].isKiller;
+  selected.appendChild(optionTag);
+}
+
+let selected = document.getElementById('myKiller');
+selected.addEventListener('change', getOption);
+let optionTag = document.createElement('option');
+optionTag.innerHTML = ourPlayersGame.playableCharacters[0].name;
+optionTag.value = ourPlayersGame.playableCharacters[0].name;
+selected.appendChild(optionTag);
 
 console.log(ourPlayersGame);
 ourPlayersGame.save();

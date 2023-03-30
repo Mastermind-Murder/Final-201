@@ -107,12 +107,19 @@
     <div class="button-container">
         <button class="candyhorror"><a href="./candyhorror.html">Candy Horror</a></button>
     </div>
-
+    <form>
+        Select your favorite fruit:
+        <select id="myKiller">
+        </select>
+        <br><br>
+        <input type="button" onclick="getOption()" value="Click Me!">
+        </form>
+        <p id="demo"></p>
 
     <script src="js/app.js"></script>
     <script src="js/card.js"></script>
     <audio autoplay>
-        <source src="./assets/intro.mp3" type="audio/mp3">
+        <!-- <source src="./assets/intro.mp3" type="audio/mp3"> -->
     </audio>
 </body>
 

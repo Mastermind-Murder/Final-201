@@ -1,131 +1,112 @@
 body {
-    margin: 25px;
-    background-color: rgb(42, 39, 39);
-  }
-  
-  h1 {
-  font-size: 100px;
-  text-align: center;
-  font-family: 'Nosifer', cursive;
-  color: red;
-  }
-  
-  p {
-    color: whitesmoke;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color:#cf7878;
-  }
-  
-  .alexander {
-  background-image: url("./images/bloodybackground.jpg");
-  background-size: 100%;
-  height: 660px;
-  padding-right: 10px;
-  }
-  
-  .alexander img {
-    padding: 25px 0px 0px 0px;
-  }
-  
-  .alexander2 {
-  display: flex;
-  flex-direction: row;
-  margin-top: 60px;
-  margin-left: 20px;
-  }
-  
-  .alexander p {
-  margin-top: 50px;
-  color: white;
-  font-weight: 500;
-  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
-  }
-  
-  .main {
-  padding:0px;
-  }
-  
-  .victimSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  padding: 20px 0px 30px 0px;
-  width: 1001px;
-  }
-  
-  #victim {
-  padding: 0px 25px 0px 125px
-  }
-  
-  h2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  font-size: 60px;
-  color: RED;
-  font-family: 'Nosifer', cursive;
-  }
-  
-  h3 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  font-size: 30px;
-  color: red;
-  }
-  
-  header nav {
-  color: grey !important;
-  font-weight: bold;
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  padding: auto;
-  }
-  
-  nav img {
-  display: inline-block;
-  border-radius: 50%;
-  border: 2px solid rgb(22, 2, 2);
-  border-color: rgb(18, 1, 1);
-  max-height: 100px;
-  }
-  
-  header li {
-  display: inline;
-  line-height: 50px;
-  margin-left: 50px
-  }
-  
-  body section {
-  padding: 20px;
-  margin: auto;
-  font-size: x-large;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  }
-  
-  
-  /* Cards */
-  
-  .card-container-main {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  height: 120vh;
-  width: 1400px;
-  }
+  margin: 25px;
+  background-color: rgb(42, 39, 39);
+}
 
-  .card {
-  /* position: relative;
+p {
+  color: whitesmoke;
+}
+
+nav a {
+  text-decoration: none;
+  color:#cf7878;
+}
+
+.alexander {
+background-image: url("./images/bloodybackground.jpg");
+background-size: 100%;
+height: 660px;
+padding-right: 10px;
+}
+
+.alexander img {
+  padding: 25px 0px 0px 0px;
+}
+
+.alexander p {
+margin-top: 50px;
+color: white;
+font-weight: 500;
+text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
+}
+
+.victimSection {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+padding: 20px 0px 30px 0px;
+width: 1001px;
+}
+
+#victim {
+padding: 0px 25px 0px 125px
+}
+
+#cards-main {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+padding: 0px;
+}
+
+h2 {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+font-size: 60px;
+color:#cf7878;
+font-family: 'Nosifer', cursive;
+}
+
+h3 {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-content: center;
+font-size: 30px;
+color: red;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header nav {
+font-weight: bold;
+display: flex;
+justify-content: center; 
+align-items: center; 
+padding: auto;
+}
+
+header li {
+display: inline;
+line-height: 50px;
+margin-left: 50px
+}
+
+body section {
+padding: 20px;
+margin: auto;
+font-size: x-large;
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+}
+
+
+/* Cards */
+
+.card-container-main {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+height: 120vh;
+width: 1400px;
+}
+.card {
+  position: relative;
   width: 250px;
   height: 375px;
   perspective: 800px;
@@ -136,52 +117,53 @@ body {
   align-content: center;
   font-size: 24px;
   text-align: center;
-  background-color: #cf7878;
-  color:black; */
-  }
+}
+.card-front, .card-back {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+}
+.card-front {
+background-color: #ccc;
+}
 
-  .card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  transition: transform 0.6s ease-in-out; /* This determines the transition effect */
-  }
+.card-back {
+background-color: #cf7878;
+color:black;
+transform: rotateY(180deg);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+font-size: 28px;
+text-align: center;
+padding-left: 8px;
+padding-right: 8px;
+}
+.card.flip .card-front {
+transform: rotateY(180deg);
+}
+.card.flip .card-back {
+transform: rotateY(0deg);
+}
 
-  .card-front {
-  background-color: #ccc;
-  }
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  .card-back {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    font-size: 24px;
-    text-align: center;
-    background-color: #cf7878;
-    color:black;
-    transform: rotateY(180deg);
-    position: absolute; */
-  }
-  .card.flip .card-front {
-  transform: rotateY(180deg);
-  }
-  .card.flip .card-back {
-  transform: rotateY(0deg);
-  }
-  .card-front {
-    transform: rotateY(0deg); /* This determines the initial state of the card */
-  }
-  
-  .card-back {
-    transform: rotateY(180deg); /* This determines the flipped state of the card */
-  }
-  
-  .card:hover .card-front {
-    transform: rotateY(180deg); /* This flips the card when it is hovered over */
-  }
-  
-  .card:hover .card-back {
-    transform: rotateY(0deg); /* This flips the back of the card when it is hovered over */
-  }
+}
+
+.prettythingsandnightmares, .candyhorror {
+  font-family: 'Eater', cursive;
+  margin: 20px;
+}
+
+.button-container a {
+  text-decoration: none;
+  font-size: 30px; 
+  color: white;
+  background-color: black;
+}
+

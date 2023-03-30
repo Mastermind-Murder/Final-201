@@ -6,7 +6,7 @@ function quiz() {
   if ( entrance === 'yes') {
     alert('Welcome to the game of Murder and Mystery!');
     let image = document.createElement('img');
-    image.src = 'assets/images.jpg';
+    image.src = 'images/murderanimate.gif';
     container.appendChild(image);
     setTimeout(()=>{
       container.removeChild(image);

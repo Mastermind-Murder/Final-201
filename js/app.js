@@ -6,7 +6,7 @@ function Character(name, age, fileLocation) {
   this.name = name;
   this.age = age;
   this.fileLocation = fileLocation;
-  this.defaultWeapon;
+  this.defaultWeapon; //can be used for rooms 
   this.id = this.name + this.age;
   this.howDied = `${this.name} has been found dead, wounds look like they got hit with ${this.defaultWeapon} please investigate`;
   this.clue1;

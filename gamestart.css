@@ -167,3 +167,15 @@ transform: rotateY(0deg);
   background-color: black;
 }
 
+
+#killer-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  padding-top: 30px;
+  padding-bottom: 0px;
+  border-bottom: 0px;
+  margin-bottom: 0px;
+}

@@ -301,12 +301,12 @@ GamePlayCharacters.prototype.save = function () {
   // localStorage.setItem('characters', stringifyValues);
 
 
-  if(!localStorage.getItem('characters') || JSON.parse(localStorage.getItem('characters')).length===0){
+  if (!localStorage.getItem('characters') || JSON.parse(localStorage.getItem('characters')).length === 0) {
     console.log(localStorage.getItem('characters'));
     let stringifyValues = JSON.stringify(this.playableCharacters);
     //console.log(stringifyValues);
     localStorage.setItem('characters', stringifyValues);
-  }else{
+  } else {
     let getLocalStorage = localStorage.getItem('characters');
     //console.log(getLocalStorage, "********************");
   }
@@ -563,37 +563,26 @@ function renderCharacterCards() {
 }
 
 renderCharacterCards();
-// localStorage('game', JSON.stringify(ourPlayersGame));
 
 function getOption(e) {
   console.log(e.target.value);
-  if(e.target.value == true){
-    alert('You arrested the right person');
-  }else {
-    alert('WRONG; congragulations you are now being sued');
-  }
   let obj = document.getElementById('myKiller');
-  document.getElementById('demo').innerHTML =
-  obj.options[obj.selectedIndex].text;
-//some stupid comment 
+  let selectedOption = obj.options[obj.selectedIndex];
+  let isKiller = selectedOption.value === 'true';
+  let alertMsg = isKiller ? `You arrested the right person: ${selectedOption.text}` : 'WRONG; congratulations you are now being sued';
+  alert(alertMsg);
 }
 
+let selected = document.getElementById('myKiller');
+selected.addEventListener('change', getOption);
 
-for(let i = 0; i<ourPlayersGame.playableCharacters.length; i++){
-  let selected = document.getElementById('myKiller');
+for (let i = 0; i < ourPlayersGame.playableCharacters.length; i++) {
   let optionTag = document.createElement('option');
   optionTag.innerHTML = ourPlayersGame.playableCharacters[i].name;
-  optionTag.value = ourPlayersGame.playableCharacters[i].isKiller;
+  let isKiller = ourPlayersGame.playableCharacters[i].isKiller;
+  optionTag.value = isKiller ? 'true' : 'false';
+  console.log(optionTag.value);
   selected.appendChild(optionTag);
 }
 
-// let selected = document.getElementById('myKiller');
-// selected.addEventListener('change', getOption);
-// let optionTag = document.createElement('option');
-// optionTag.innerHTML = ourPlayersGame.playableCharacters[0].name;
-// optionTag.value = ourPlayersGame.playableCharacters[0].name;
-// selected.appendChild(optionTag);
-
 console.log(ourPlayersGame);
-
-

@@ -295,9 +295,21 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function (guessedCharacte
 };
 
 GamePlayCharacters.prototype.save = function () {
-  let stringifyValues = JSON.stringify(this.playableCharacters);
-  //console.log(stringifyValues);
-  localStorage.setItem('characters', stringifyValues);
+  console.log('inside safe prototype');
+  // let stringifyValues = JSON.stringify(this.playableCharacters);
+  // console.table(stringifyValues);
+  // localStorage.setItem('characters', stringifyValues);
+
+
+  if(!localStorage.getItem('characters') || JSON.parse(localStorage.getItem('characters')).length===0){
+    console.log(localStorage.getItem('characters'));
+    let stringifyValues = JSON.stringify(this.playableCharacters);
+    //console.log(stringifyValues);
+    localStorage.setItem('characters', stringifyValues);
+  }else{
+    let getLocalStorage = localStorage.getItem('characters');
+    //console.log(getLocalStorage, "********************");
+  }
 };
 
 GamePlayCharacters.prototype.load = function () {
@@ -469,6 +481,43 @@ GamePlayCharacters.prototype.assignInfo = function () {
 
 let ourPlayersGame = new GamePlayCharacters(ourTotalPlayers);
 
+
+
+//global function for game
+
+
+function GameStart() {
+  this.peopleInRoom = [];
+
+  this.loadPeopleFromMemory = function () {
+    let valuesFromStorage = JSON.parse(localStorage.getItem('characters'));
+    this.peopleInRoom = valuesFromStorage;
+  };
+}
+
+function startTheGame(GamePlayCharacters) {
+  GamePlayCharacters.selectGameplayCharacters();
+  GamePlayCharacters.resetGame();
+  GamePlayCharacters.assignRooms();
+  GamePlayCharacters.assignInfo();
+  GamePlayCharacters.generateKiller();
+  //renderCharacterCards();
+  // renderClues();
+}
+
+startTheGame(ourPlayersGame);
+
+let loadStart = new GameStart();
+ourPlayersGame.save();
+loadStart.loadPeopleFromMemory();
+
+console.log(loadStart);
+
+
+
+
+
+
 function renderCharacterCards() {
   let imageOneEl = document.getElementById('character1');
   let storyOneEl = document.getElementById('story1');
@@ -491,40 +540,29 @@ function renderCharacterCards() {
   let imageTenEl = document.getElementById('character10');
   let storyTenEl = document.getElementById('story10');
 
-  imageOneEl.src = ourPlayersGame.playableCharacters[0].fileLocation;
-  storyOneEl.innerHTML = ourPlayersGame.playableCharacters[0].backStory;
-  imageTwoEl.src = ourPlayersGame.playableCharacters[1].fileLocation;
-  storyTwoEl.innerHTML = ourPlayersGame.playableCharacters[1].backStory;
-  imageThreeEl.src = ourPlayersGame.playableCharacters[2].fileLocation;
-  storyThreeEl.innerHTML = ourPlayersGame.playableCharacters[2].backStory;
-  imageFourEl.src = ourPlayersGame.playableCharacters[3].fileLocation;
-  storyFourEl.innerHTML = ourPlayersGame.playableCharacters[3].backStory;
-  imageFiveEl.src = ourPlayersGame.playableCharacters[4].fileLocation;
-  storyFiveEl.innerHTML = ourPlayersGame.playableCharacters[4].backStory;
-  imageSixEl.src = ourPlayersGame.playableCharacters[5].fileLocation;
-  storySixEl.innerHTML = ourPlayersGame.playableCharacters[5].backStory;
-  imageSevenEl.src = ourPlayersGame.playableCharacters[6].fileLocation;
-  storySevenEl.innerHTML = ourPlayersGame.playableCharacters[6].backStory;
-  imageEightEl.src = ourPlayersGame.playableCharacters[7].fileLocation;
-  storyEightEl.innerHTML = ourPlayersGame.playableCharacters[7].backStory;
-  imageNineEl.src = ourPlayersGame.playableCharacters[8].fileLocation;
-  storyNineEl.innerHTML = ourPlayersGame.playableCharacters[8].backStory;
-  imageTenEl.src = ourPlayersGame.playableCharacters[9].fileLocation;
-  storyTenEl.innerHTML = ourPlayersGame.playableCharacters[9].backStory;
+  imageOneEl.src = loadStart.peopleInRoom[0].fileLocation;
+  storyOneEl.innerHTML = loadStart.peopleInRoom[0].backStory;
+  imageTwoEl.src = loadStart.peopleInRoom[1].fileLocation;
+  storyTwoEl.innerHTML = loadStart.peopleInRoom[1].backStory;
+  imageThreeEl.src = loadStart.peopleInRoom[2].fileLocation;
+  storyThreeEl.innerHTML = loadStart.peopleInRoom[2].backStory;
+  imageFourEl.src = loadStart.peopleInRoom[3].fileLocation;
+  storyFourEl.innerHTML = loadStart.peopleInRoom[3].backStory;
+  imageFiveEl.src = loadStart.peopleInRoom[4].fileLocation;
+  storyFiveEl.innerHTML = loadStart.peopleInRoom[4].backStory;
+  imageSixEl.src = loadStart.peopleInRoom[5].fileLocation;
+  storySixEl.innerHTML = loadStart.peopleInRoom[5].backStory;
+  imageSevenEl.src = loadStart.peopleInRoom[6].fileLocation;
+  storySevenEl.innerHTML = loadStart.peopleInRoom[6].backStory;
+  imageEightEl.src = loadStart.peopleInRoom[7].fileLocation;
+  storyEightEl.innerHTML = loadStart.peopleInRoom[7].backStory;
+  imageNineEl.src = loadStart.peopleInRoom[8].fileLocation;
+  storyNineEl.innerHTML = loadStart.peopleInRoom[8].backStory;
+  imageTenEl.src = loadStart.peopleInRoom[9].fileLocation;
+  storyTenEl.innerHTML = loadStart.peopleInRoom[9].backStory;
 }
 
-//global function for game
-function startTheGame(GamePlayCharacters) {
-  GamePlayCharacters.selectGameplayCharacters();
-  GamePlayCharacters.resetGame();
-  GamePlayCharacters.assignRooms();
-  GamePlayCharacters.assignInfo();
-  GamePlayCharacters.generateKiller();
-  renderCharacterCards();
-  // renderClues();
-}
-
-startTheGame(ourPlayersGame);
+renderCharacterCards();
 // localStorage('game', JSON.stringify(ourPlayersGame));
 
 function getOption(e) {
@@ -557,6 +595,5 @@ optionTag.value = ourPlayersGame.playableCharacters[0].name;
 selected.appendChild(optionTag);
 
 console.log(ourPlayersGame);
-ourPlayersGame.save();
-// ourPlayersGame.load();
-console.log(localStorage);
+
+

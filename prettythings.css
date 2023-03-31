@@ -184,3 +184,17 @@ footer a {
   z-index: 0;
 
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  color: black;
+}
+
+#button {
+  font-size: xxx-large;
+  color: red;
+  font-family: 'Delicious Handrawn', cursive;
+}

@@ -10,7 +10,7 @@ function quiz() {
     container.appendChild(image);
     setTimeout(()=>{
       container.removeChild(image);
-    },3000);
+    },4500);
   } else {
     alert('We do not blame you for being scared to enter!');
   }

@@ -576,12 +576,13 @@ function getOption(e) {
 let selected = document.getElementById('myKiller');
 selected.addEventListener('change', getOption);
 
-for (let i = 0; i < ourPlayersGame.playableCharacters.length; i++) {
+//renders drop down list of characters
+for (let i = 0; i < loadStart.peopleInRoom.length; i++) {
   let optionTag = document.createElement('option');
-  optionTag.innerHTML = ourPlayersGame.playableCharacters[i].name;
-  let isKiller = ourPlayersGame.playableCharacters[i].isKiller;
+  optionTag.innerHTML = loadStart.peopleInRoom[i].name;
+  let isKiller = loadStart.peopleInRoom[i].isKiller;
   optionTag.value = isKiller ? 'true' : 'false';
-  console.log(optionTag.value);
+  //console.log(optionTag.value);
   selected.appendChild(optionTag);
 }
 

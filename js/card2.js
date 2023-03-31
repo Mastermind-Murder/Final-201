@@ -86,21 +86,21 @@ console.log(candyHorrorRoom);
 
 
 // let container = document.getElementById('image-container');
-function quiz() {
-  let entrance = prompt('You have entered the Candy Horror room are you prepared to see what lurks in the shadows?').toLowerCase();
-  if ( entrance === 'yes') {
-    alert('Embrace the sweet taste of all these treats but be prepared a mystery awaits!');
-    // let image = document.createElement('img');
-    // image.src = 'assets/chimages.jpg';
-    // // container.appendChild(image);
-    // // setTimeout(()=>{
-    // //   container.removeChild(image);
-    // // },10000);
-  } else {
-    alert('We do not blame you for being scared to enter!');
-  }
-}
-quiz();
+// function quiz() {
+//   let entrance = prompt('You have entered the Candy Horror room are you prepared to see what lurks in the shadows?').toLowerCase();
+//   if ( entrance === 'yes') {
+//     alert('Embrace the sweet taste of all these treats but be prepared a mystery awaits!');
+//     // let image = document.createElement('img');
+//     // image.src = 'assets/chimages.jpg';
+//     // // container.appendChild(image);
+//     // // setTimeout(()=>{
+//     // //   container.removeChild(image);
+//     // // },10000);
+//   } else {
+//     alert('We do not blame you for being scared to enter!');
+//   }
+// }
+// quiz();
 
 let timeLeft = 90; // 2 minutes in seconds
 let timer = document.getElementById('timer');

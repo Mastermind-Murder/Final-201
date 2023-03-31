@@ -17,3 +17,7 @@ function quiz() {
 }
 quiz();
 
+let audio = document.getElementsByTagName ('audio')[0];
+
+// Set the volume to half
+audio.volume = 0.0;

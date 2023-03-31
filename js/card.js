@@ -70,7 +70,7 @@ function renderRoomData() {
 
       cardContainer.appendChild(mainDiv);
     }else{
-      console.log('they do not belong in this room');
+      //console.log('they do not belong in this room');
     }
   }
 }
@@ -106,5 +106,5 @@ function startTimer() {
 }
 
 renderRoomData();
-console.log(candyHorrorRoom);
+//console.log(candyHorrorRoom);
 

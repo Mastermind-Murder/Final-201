@@ -295,7 +295,6 @@ GamePlayCharacters.prototype.checkIfSelectedIsKiller = function (guessedCharacte
 };
 
 GamePlayCharacters.prototype.save = function () {
-  // console.log('inside safe prototype');
   // let stringifyValues = JSON.stringify(this.playableCharacters);
   // console.table(stringifyValues);
   // localStorage.setItem('characters', stringifyValues);
@@ -511,12 +510,6 @@ let loadStart = new GameStart();
 ourPlayersGame.save();
 loadStart.loadPeopleFromMemory();
 
-// console.log(loadStart);
-
-
-
-
-
 
 function renderCharacterCards() {
   let imageOneEl = document.getElementById('character1');
@@ -586,9 +579,3 @@ for (let i = 0; i < loadStart.peopleInRoom.length; i++) {
   selected.appendChild(optionTag);
 }
 
-// console.log(ourPlayersGame);
-
-let audio = document.getElementsByTagName ('audio')[0];
-
-// Set the volume to half
-audio.volume = 0.1;

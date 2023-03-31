@@ -179,3 +179,16 @@ transform: rotateY(0deg);
   border-bottom: 0px;
   margin-bottom: 0px;
 }
+
+#killer-select #myKiller{
+  width: 250px;
+  border-radius: 12px;
+  font-size: 15px;
+  background-color:#cf7878;
+  transition-duration: 0.4s;
+}
+
+#myKiller:hover {
+  background-color: #9c342d;
+  color: whitesmoke;
+}

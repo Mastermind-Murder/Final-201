@@ -76,13 +76,13 @@ function renderRoomData() {
 
       cardContainer.appendChild(mainDiv);
     }else{
-      console.log('they do not belong in this room');
+      //console.log('they do not belong in this room');
     }
   }
 }
 
 renderRoomData();
-console.log(candyHorrorRoom);
+//console.log(candyHorrorRoom);
 
 
 // let container = document.getElementById('image-container');

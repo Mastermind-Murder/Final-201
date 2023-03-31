@@ -1,8 +1,8 @@
 body {
   position: absolute;
   background-image: url("./images/prettythingsroom.jpg");
-  background-size: cover; 
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
@@ -29,153 +29,158 @@ P {
 }
 
 header nav {
-    color: grey !important;
-    font-weight: bold;
-    display: flex;
-    padding: auto;
-    position: absolute;
-    top: -10px;
-    position: relative
-  }
-  
-  nav img {
-    display: inline-block;
-    border-radius: 50%;
-    border: 2px solid rgb(22, 2, 2);
-    border-color: rgb(18, 1, 1);
-    max-height: 100px;
-  }
-  
-  
-  header li {
-    display: inline;
-    line-height: 50px;
-    margin-left: 50px
-  }
-  
-  body section {
-    padding: 15px;
-    border: 5px;
-    font-size: x-large;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-  }
-  
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  footer {
-    background-color: transparent;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 4px;
-    padding-top: 10px;
-    font-size: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-  }
-
-  /* Cards */
-
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    margin-top: 20px;
-    margin-bottom: 0px;
-  }
-  .card {
-    position: relative;
-    width: 250px;
-    height: 375px;
-    perspective: 800px;
-    padding: 20px;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    border-bottom: 10px;
-  }
-
-  .card-front {
-    /* background-color: #ccc; */
-  }
-  .card-back {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    font-size: 22px;
-    text-align: center;
-    transform: rotateY(180deg);
-    background-color: bisque;
-    color: red;
-    font-family: 'Delicious Handrawn', cursive;
-    position: absolute;
-    width: 295px;
-    height: 360px;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    border-bottom: 10px;
-  }
-
-  .card p {
-  padding: 0px 5px 10px 5px;
+  color: grey !important;
+  font-weight: bold;
+  display: flex;
+  padding: auto;
+  position: absolute;
+  top: -10px;
+  position: relative
 }
 
-  .card.flip .card-front {
-    transform: rotateY(180deg);
-  }
-  .card.flip .card-back {
-    transform: rotateY(0deg);
-  }
+nav img {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid rgb(22, 2, 2);
+  border-color: rgb(18, 1, 1);
+  max-height: 100px;
+}
 
-  footer a {
-    font-family: 'Creepster', cursive;
-  }
-  
-  .card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* This ensures that the back side of the card is not visible by default */
-    transition: transform 0.6s ease-in-out; /* This determines the transition effect */
-  }
 
-  .card-front {
-    transform: rotateY(0deg); /* This determines the initial state of the card */
-  }
-  
-  .card-back {
-    transform: rotateY(180deg); /* This determines the flipped state of the card */
-  }
-  
-  .card:hover .card-front {
-    transform: rotateY(180deg); /* This flips the card when it is hovered over */
-  }
-  
-  .card:hover .card-back {
-    transform: rotateY(0deg); /* This flips the back of the card when it is hovered over */
-  }
+header li {
+  display: inline;
+  line-height: 50px;
+  margin-left: 50px
+}
 
-  .blackout{
-  
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    
-  }
+body section {
+  padding: 15px;
+  border: 5px;
+  font-size: x-large;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 4px;
+  padding-top: 10px;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+/* Cards */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.card {
+  position: relative;
+  width: 260px;
+  height: 400px;
+  perspective: 800px;
+  padding: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 10px;
+}
+
+.card-front {
+  /* background-color: #ccc; */
+}
+
+.card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-size: 22px;
+  text-align: center;
+  transform: rotateY(180deg);
+  background-color: bisque;
+  color: red;
+  font-family: 'Delicious Handrawn', cursive;
+  position: absolute;
+  width: 260px;
+  height: 400px;
+}
+
+.card p {
+  padding: 10px;
+}
+
+.card.flip .card-front {
+  transform: rotateY(180deg);
+}
+
+.card.flip .card-back {
+  transform: rotateY(0deg);
+}
+
+footer a {
+  font-family: 'Creepster', cursive;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  /* This ensures that the back side of the card is not visible by default */
+  transition: transform 0.6s ease-in-out;
+  /* This determines the transition effect */
+}
+
+.card-front {
+  transform: rotateY(0deg);
+  /* This determines the initial state of the card */
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  /* This determines the flipped state of the card */
+}
+
+.card:hover .card-front {
+  transform: rotateY(180deg);
+  /* This flips the card when it is hovered over */
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+  /* This flips the back of the card when it is hovered over */
+}
+
+.blackout {
+
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+
+}

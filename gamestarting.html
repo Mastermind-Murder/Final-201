@@ -42,17 +42,28 @@
     </header>
 
     <h2>The Victim</h2>
+    
     <section class="victimSection">
 
         <div class="alexander">
-            <img src="./images/Alexander_Thomas.jpg" alt="The victim of the game, Alexander Thomas, an wealthy businessman in a blue suit with close-cropped hair"id="">
+            <img src="./images/Alexander_Thomas.jpg"
+                alt="The victim of the game, Alexander Thomas, an wealthy businessman in a blue suit with close-cropped hair"
+                id="">
             <p>Alexander Thomas was a wealthy and well-known business tycoon in the Seattle area. He has been married
                 twice and has an adopted younger sibling, with whom he is estranged. Alexander has been ruthless in
                 business and took the same approach in his personal life. He was found murdered in his home office.</p>
         </div>
     </section>
-
+    
     <h2>MEET THE SUSPECTS</h2>
+
+    <form id="killer-select">
+        Who do you think is the Mastermind of Murder?
+        <select id="myKiller">
+        <datalist onclick="getOption()">
+        </select>
+        <!-- <br><br> -->
+    </form>
 
     <section id="cards-main">
         <div class="card-container-main">
@@ -101,20 +112,15 @@
     <br>
     <h3>Choose A Room If You Dare!!</h3>
     <div class="button-container">
-        <button class="prettythingsandnightmares"><a href="./prettythingsandnightmares.html">Pretty Things And Nightmares</a></button>
+        <button class="prettythingsandnightmares"><a href="./prettythingsandnightmares.html">Pretty Things And
+                Nightmares</a></button>
     </div>
-    
+
     <div class="button-container">
         <button class="candyhorror"><a href="./candyhorror.html">Candy Horror</a></button>
     </div>
-    <form>
-        Select your favorite fruit:
-        <select id="myKiller">
-        </select>
-        <br><br>
-        <input type="button" onclick="getOption()" value="Click Me!">
-        </form>
-        <p id="demo"></p>
+
+    <p id="demo"></p>
 
     <script src="js/app.js"></script>
     <script src="js/card.js"></script>

@@ -468,7 +468,7 @@ GamePlayCharacters.prototype.assignInfo = function () {
   let clue1J = `${this.playableCharacters[9].name} : Was at a movie theater at the time of the murder, and several people who were there with them can confirm their presence. They also have a ticket stub as proof.`;
   this.playableCharacters[9].clue1 = clue1J;
 
-  let clue2J = `${this.playableCharacters[9].name} : Also went to a restaurant to have dinner with a friend before the murder, and the friend can confirm their presence at that time.`;
+  let clue2J = `${this.playableCharacters[9].name} : Also went to a restaurant to have dinner with a friend before the movie, and the friend can confirm their presence at that time.`;
   this.playableCharacters[9].clue2 = clue2J;
 
   let clue3J = `${this.playableCharacters[9].name} : Was seen arguing with Alexander in a public park near the crime scene on the day of the murder. Claims it was just a minor dispute, but witnesses saw them hitting Alexander multiple times.`;

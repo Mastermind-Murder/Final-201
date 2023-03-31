@@ -587,12 +587,12 @@ for(let i = 0; i<ourPlayersGame.playableCharacters.length; i++){
   selected.appendChild(optionTag);
 }
 
-let selected = document.getElementById('myKiller');
-selected.addEventListener('change', getOption);
-let optionTag = document.createElement('option');
-optionTag.innerHTML = ourPlayersGame.playableCharacters[0].name;
-optionTag.value = ourPlayersGame.playableCharacters[0].name;
-selected.appendChild(optionTag);
+// let selected = document.getElementById('myKiller');
+// selected.addEventListener('change', getOption);
+// let optionTag = document.createElement('option');
+// optionTag.innerHTML = ourPlayersGame.playableCharacters[0].name;
+// optionTag.value = ourPlayersGame.playableCharacters[0].name;
+// selected.appendChild(optionTag);
 
 console.log(ourPlayersGame);
 
